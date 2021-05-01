@@ -1,6 +1,6 @@
-public class Accounts {
+abstract class Accounts {
 
-    private final double apr;
+    private double apr;
     private double balance;
 
     Accounts(double apr, double balance) {

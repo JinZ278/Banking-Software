@@ -53,4 +53,10 @@ public class BankTest {
         bank.getAccounts().get(QUICK_ID).withdraw(500);
         assertEquals(500, bank.getAccounts().get(QUICK_ID).getBalance());
     }
+
+    @Test
+    public void method_test() {
+        bank.addAccount(QUICK_ID, account);
+
+    }
 }
