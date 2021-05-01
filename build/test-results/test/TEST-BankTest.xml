@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="BankTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-04-24T19:27:12" hostname="JIN-COMPOTA" time="0.004">
+<testsuite name="BankTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-01T19:43:34" hostname="JIN-COMPOTA" time="0.024">
   <properties/>
-  <testcase name="deposit_money_to_bank_account()" classname="BankTest" time="0.001"/>
-  <testcase name="withdraw_money_from_bank_account()" classname="BankTest" time="0.001"/>
-  <testcase name="bank_is_initially_empty()" classname="BankTest" time="0.001"/>
-  <testcase name="add_account_to_bank()" classname="BankTest" time="0.001"/>
-  <testcase name="add_two_accounts_to_bank()" classname="BankTest" time="0.0"/>
+  <testcase name="bank_accounts_apr()" classname="BankTest" time="0.024"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

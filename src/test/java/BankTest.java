@@ -47,6 +47,14 @@ public class BankTest {
     }
 
     @Test
+    public void deposit_money_to_bank_account_twice() {
+        bank.addAccount(QUICK_ID, account);
+        bank.getAccounts().get(QUICK_ID).deposit(900);
+        bank.getAccounts().get(QUICK_ID).deposit(200);
+        assertEquals(1100, bank.getAccounts().get(QUICK_ID).getBalance());
+    }
+
+    @Test
     public void withdraw_money_from_bank_account() {
         bank.addAccount(QUICK_ID, account);
         bank.getAccounts().get(QUICK_ID).deposit(1000);
@@ -55,8 +63,22 @@ public class BankTest {
     }
 
     @Test
+    public void withdraw_money_from_bank_account_twice() {
+        bank.addAccount(QUICK_ID, account);
+        bank.getAccounts().get(QUICK_ID).deposit(5500);
+        bank.getAccounts().get(QUICK_ID).withdraw(500);
+        bank.getAccounts().get(QUICK_ID).withdraw(200);
+        assertEquals(4800, bank.getAccounts().get(QUICK_ID).getBalance());
+    }
+
+    @Test
+    public void bank_accounts_apr() {
+        bank.addAccount(QUICK_ID, account);
+        assertEquals(QUICK_APR, bank.getAccounts().get(QUICK_ID).getApr());
+    }
+
+    @Test
     public void method_test() {
         bank.addAccount(QUICK_ID, account);
-
     }
 }
