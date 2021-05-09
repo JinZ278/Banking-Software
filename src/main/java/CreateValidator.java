@@ -19,8 +19,8 @@ class CreateValidator {
     }
 
 
-    public boolean validate(String string, Bank bank) {
-        String newString = stringIsSpaces(string);
+    public boolean validate(String commandString, Bank bank) {
+        String newString = stringIsSpaces(commandString);
         stringSplitter(newString);
         emptyInputs();
         idCheck(bank);
@@ -29,21 +29,23 @@ class CreateValidator {
         return this.validation;
     }
 
-    private String stringIsSpaces(String string) {
-        if (string.isBlank()) {
+    private String stringIsSpaces(String commandString) {
+        if (commandString.isBlank()) {
             this.validation = false;
             return "0";
         } else {
-            return string;
+            return commandString;
         }
     }
 
 
-    private void stringSplitter(String string) {
-        String[] arrOfStr = string.split(" ");
-        if (arrOfStr[0].toLowerCase().equals("create")) {
-            this.mainCommand = arrOfStr[0].toLowerCase();
-            stringAssignerCreate(arrOfStr);
+    private void stringSplitter(String newString) {
+        String[] newStringSplitIntoArray = newString.split(" ");
+        String firstWord = newStringSplitIntoArray[0].toLowerCase();
+
+        if (firstWord.equals("create")) {
+            this.mainCommand = newStringSplitIntoArray[0].toLowerCase();
+            stringAssignerCreate(newStringSplitIntoArray);
         }
     }
 
@@ -57,11 +59,11 @@ class CreateValidator {
         idHasNoCharacters();
         idExistsInBank(bank);
         idEightCharacters();
-        idWithinLimits();
+        idValueCheck();
     }
 
     private void aprCheck() {
-        aprNotString();
+        aprStringCheck();
         aprValueCheck();
     }
 
@@ -76,17 +78,17 @@ class CreateValidator {
     }
 
     public void stringAssignerCreate(String[] array) {
-        String accountType = array[1].toLowerCase();
+        String secondWord = array[1].toLowerCase();
         this.accountType = array[1].toLowerCase();
-        if (accountType.equals("checking") && array.length == 4) {
+        if (secondWord.equals("checking") && array.length == 4) {
             this.accountId = array[2];
             this.accountApr = array[3];
         }
-        if (accountType.equals("savings") && array.length == 4) {
+        if (secondWord.equals("savings") && array.length == 4) {
             this.accountId = array[2];
             this.accountApr = array[3];
         }
-        if (accountType.equals("cd") && array.length == 5) {
+        if (secondWord.equals("cd") && array.length == 5) {
             this.accountId = array[2];
             this.accountApr = array[3];
             this.value = array[4];
@@ -114,7 +116,7 @@ class CreateValidator {
         }
     }
 
-    public void idWithinLimits() {
+    public void idValueCheck() {
         if (parseInt(this.accountId) > 99999999) {
             this.validation = false;
         }
@@ -123,7 +125,7 @@ class CreateValidator {
         }
     }
 
-    public void aprNotString() {
+    public void aprStringCheck() {
         try {
             Double.parseDouble(this.accountApr);
         } catch (NumberFormatException e) {
