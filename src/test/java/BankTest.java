@@ -6,7 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class BankTest {
 
-    public final int QUICK_ID = 12345678;
+    public final String QUICK_ID = "12345678";
+    public final String QUICK_ID_2 = "12345698";
     public final float QUICK_APR = 1;
 
     Bank bank;
@@ -35,8 +36,8 @@ public class BankTest {
     @Test
     public void add_two_accounts_to_bank() {
         bank.addAccount(QUICK_ID, account);
-        bank.addAccount(QUICK_ID + 1, account2);
-        assertEquals(account2, bank.getAccounts().get(QUICK_ID + 1));
+        bank.addAccount(QUICK_ID_2, account2);
+        assertEquals(account2, bank.getAccounts().get(QUICK_ID_2));
     }
 
     @Test
