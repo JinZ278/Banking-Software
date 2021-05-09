@@ -19,11 +19,21 @@ public class DepositValidator {
     }
 
     public boolean validate(String string, Bank bank) {
-        stringSplitter(string);
+        String newString = stringIsSpaces(string);
+        stringSplitter(newString);
         emptyInputs();
         idCheck(bank);
         accountCheck(bank);
         return this.validation;
+    }
+
+    private String stringIsSpaces(String string) {
+        if (string.isBlank()) {
+            this.validation = false;
+            return "0";
+        } else {
+            return string;
+        }
     }
 
     private void stringSplitter(String string) {

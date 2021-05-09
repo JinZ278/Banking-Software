@@ -45,6 +45,10 @@ public class DepositValidatorTest {
     public final String DEPOSIT_DECIMAL_VALUE = "depoSit 12345678 69.69";
 
     public final String QUICK_ID = "12345678";
+
+    public final String EMPTY_STRING = "";
+    public final String JUST_SPACES = "    ";
+
     DepositValidator depositValidator;
     Bank bank;
     Accounts checkingAccount;
@@ -237,5 +241,17 @@ public class DepositValidatorTest {
     public void deposit_decimal_value() {
         bank.addAccount(QUICK_ID, checkingAccount);
         assertTrue(depositValidator.validate(DEPOSIT_DECIMAL_VALUE, bank));
+    }
+
+    @Test
+    public void empty_string() {
+        bank.addAccount(QUICK_ID, checkingAccount);
+        assertFalse(depositValidator.validate(EMPTY_STRING, bank));
+    }
+
+    @Test
+    public void just_spaces() {
+        bank.addAccount(QUICK_ID, checkingAccount);
+        assertFalse(depositValidator.validate(JUST_SPACES, bank));
     }
 }
