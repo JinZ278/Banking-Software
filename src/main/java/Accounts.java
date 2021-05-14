@@ -1,7 +1,7 @@
 abstract class Accounts {
 
-    private double apr;
-    private double balance;
+    protected double apr;
+    protected double balance;
 
     Accounts(double apr, double balance) {
         this.apr = apr;
@@ -9,15 +9,18 @@ abstract class Accounts {
     }
 
     static Accounts checking(double apr) {
-        return new Checking(apr);
+        Checking checking = new Checking(apr);
+        return checking;
     }
 
     static Accounts savings(double apr) {
-        return new Savings(apr);
+        Savings savings = new Savings(apr);
+        return savings;
     }
 
     static Accounts cd(double apr, double balance) {
-        return new Cd(apr, balance);
+        Cd cd = new Cd(apr, balance);
+        return cd;
     }
 
     public double getBalance() {
@@ -28,21 +31,10 @@ abstract class Accounts {
         return this.apr;
     }
 
-    public void deposit(double amount) {
-        this.balance += amount;
-    }
+    public abstract void deposit(double amount);
 
-    public void withdraw(double amount) {
-        double withdrawal = withdrawOverBalance(amount);
-        this.balance -= withdrawal;
-    }
+    public abstract void withdraw(double amount);
 
-    public double withdrawOverBalance(double num) {
-        if (this.balance < num) {
-            return this.balance;
-        } else {
-            return num;
-        }
-    }
+    public abstract double withdrawOverBalance(double num);
 
 }
