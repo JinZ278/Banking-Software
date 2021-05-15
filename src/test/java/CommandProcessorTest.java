@@ -9,6 +9,10 @@ public class CommandProcessorTest {
     public final String VALID_CREATE_SAVINGS_COMMAND = "Create Savings 29292929 3.0";
     public final String VALID_CREATE_CD_COMMAND = "Create Cd 99999999 5.7 1000";
 
+    public final String VALID_DEPOSIT_CHECKING_COMMAND = "Deposit 12345678 1200";
+    public final String VALID_DEPOSIT_SAVINGS_COMMAND = "Deposit 29292929 2000";
+
+
     CommandValidator commandValidator;
     CommandProcessor commandProcessor;
     Bank bank;
@@ -49,7 +53,28 @@ public class CommandProcessorTest {
 
     @Test
     public void process_deposit_checking_command() {
+        commandProcessor.process(VALID_CREATE_CHECKING_COMMAND, bank);
+        assertTrue(bank.getAccounts().get("12345678").getBalance() == 0);
+        commandProcessor.process(VALID_DEPOSIT_CHECKING_COMMAND, bank);
+        assertTrue(bank.getAccounts().get("12345678").getBalance() == 1200);
+    }
 
+    @Test
+    public void process_deposit_savings_command() {
+        commandProcessor.process(VALID_CREATE_SAVINGS_COMMAND, bank);
+        assertTrue(bank.getAccounts().get("29292929").getBalance() == 0);
+        commandProcessor.process(VALID_DEPOSIT_SAVINGS_COMMAND, bank);
+        assertTrue(bank.getAccounts().get("29292929").getBalance() == 2000);
+    }
+
+    @Test
+    public void process_deposit_twice() {
+        commandProcessor.process(VALID_CREATE_CHECKING_COMMAND, bank);
+        assertTrue(bank.getAccounts().get("12345678").getBalance() == 0);
+        commandProcessor.process("Deposit 12345678 2000", bank);
+        assertTrue(bank.getAccounts().get("12345678").getBalance() == 2000);
+        commandProcessor.process("Deposit 12345678 69.42", bank);
+        assertTrue(bank.getAccounts().get("12345678").getBalance() == 2069.42);
     }
 
 }

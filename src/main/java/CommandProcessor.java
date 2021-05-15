@@ -13,6 +13,7 @@ public class CommandProcessor {
     private void createProcess(String[] info, Bank bank) {
         Accounts newAccount = null;
         double apr = Double.parseDouble(info[3]);
+
         if (info[1].toLowerCase().equals("checking")) {
             newAccount = Accounts.checking(apr);
         }
@@ -26,6 +27,9 @@ public class CommandProcessor {
     }
 
     private void depositProcess(String[] info, Bank bank) {
+        String accountId = info[1];
+        double amountToStore = Double.parseDouble(info[2]);
+        bank.getAccounts().get(accountId).deposit(amountToStore);
     }
 
     private String[] stringSplitter(String newString) {
