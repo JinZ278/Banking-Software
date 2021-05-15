@@ -10,6 +10,15 @@ public class Cd extends Accounts {
         super(apr, balance);
     }
 
+    @Override
+    public double getBalance() {
+        return this.balance;
+    }
+
+    @Override
+    public double getApr() {
+        return this.apr;
+    }
 
     @Override
     public void deposit(double amount) {
@@ -22,13 +31,17 @@ public class Cd extends Accounts {
         this.balance -= withdrawal;
     }
 
-    @Override
     public double withdrawOverBalance(double num) {
         if (this.balance < num) {
             return this.balance;
         } else {
             return num;
         }
+    }
+
+    @Override
+    public boolean validate(double amount) {
+        return false;
     }
 
 }

@@ -23,18 +23,15 @@ abstract class Accounts {
         return cd;
     }
 
-    public double getBalance() {
-        return this.balance;
-    }
 
-    public double getApr() {
-        return this.apr;
-    }
-
-    public abstract void deposit(double amount);
+    public abstract double getBalance();
 
     public abstract void withdraw(double amount);
 
-    public abstract double withdrawOverBalance(double num);
+    public abstract void deposit(double amount);
+
+    public abstract double getApr();
+
+    public abstract boolean validate(double amount);
 
 }
