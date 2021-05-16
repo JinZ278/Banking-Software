@@ -10,12 +10,12 @@ public class CommandStorage {
     }
 
 
-    public void add(String invalid_string) {
+    public void addInvalidString(String invalid_string) {
         this.invalidStrings.add(invalid_string);
     }
 
 
-    public ArrayList<String> printList() {
+    public ArrayList<String> getInvalidStrings() {
         return this.invalidStrings;
     }
 }
