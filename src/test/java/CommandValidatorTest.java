@@ -20,47 +20,47 @@ public class CommandValidatorTest {
 
     @BeforeEach
     void setup() {
-        commandValidator = new CommandValidator();
         bank = new Bank();
+        commandValidator = new CommandValidator(bank);
     }
 
     @Test
     public void correct_create_string() {
-        assertTrue(commandValidator.validate(CREATE_SAVINGS, bank));
+        assertTrue(commandValidator.validate(CREATE_SAVINGS));
     }
 
 
     @Test
     public void wrong_create_string() {
-        assertFalse(commandValidator.validate(WRONG_CREATE_SAVINGS, bank));
+        assertFalse(commandValidator.validate(WRONG_CREATE_SAVINGS));
     }
 
     @Test
     public void correct_deposit_string() {
         Accounts savingAccount = Accounts.checking(2);
         bank.addAccount("11122233", savingAccount);
-        assertTrue(commandValidator.validate(DEPOSIT_CHECKING, bank));
+        assertTrue(commandValidator.validate(DEPOSIT_CHECKING));
     }
 
     @Test
     public void wrong_deposit_string() {
         Accounts savingAccount = Accounts.checking(2);
         bank.addAccount("11122233", savingAccount);
-        assertFalse(commandValidator.validate(WRONG_DEPOSIT_CHECKING, bank));
+        assertFalse(commandValidator.validate(WRONG_DEPOSIT_CHECKING));
     }
 
     @Test
     public void empty_string() {
-        assertFalse(commandValidator.validate(EMPTY_STRING, bank));
+        assertFalse(commandValidator.validate(EMPTY_STRING));
     }
 
     @Test
     public void just_spaces() {
-        assertFalse(commandValidator.validate(JUST_SPACES, bank));
+        assertFalse(commandValidator.validate(JUST_SPACES));
     }
 
     @Test
     public void random_string() {
-        assertFalse(commandValidator.validate("rhaowhraowriwhr", bank));
+        assertFalse(commandValidator.validate("rhaowhraowriwhr"));
     }
 }

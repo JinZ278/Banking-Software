@@ -1,12 +1,18 @@
 public class CommandProcessor {
 
-    public void process(String valid_create_string, Bank bank) {
+    protected Bank bank;
+
+    public CommandProcessor(Bank bank) {
+        this.bank = bank;
+    }
+
+    public void process(String valid_create_string) {
         String[] info = stringSplitter(valid_create_string);
         if (info[0].toLowerCase().equals("create")) {
-            createProcess(info, bank);
+            createProcess(info, this.bank);
         }
         if (info[0].toLowerCase().equals("deposit")) {
-            depositProcess(info, bank);
+            depositProcess(info, this.bank);
         }
     }
 
