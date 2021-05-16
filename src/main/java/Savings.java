@@ -41,7 +41,7 @@ public class Savings extends Accounts {
     }
 
     @Override
-    public boolean validate(double amount) {
+    public boolean validateAmount(double amount) {
         if (amount >= MIN_DEPOSIT && amount <= MAX_DEPOSIT) {
             return true;
         } else {

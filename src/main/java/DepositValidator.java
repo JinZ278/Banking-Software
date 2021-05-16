@@ -103,7 +103,7 @@ public class DepositValidator {
     }
 
     public void valueCheck(Accounts accounts) {
-        if (!accounts.validate(Double.parseDouble(this.value))) {
+        if (!accounts.validateAmount(Double.parseDouble(this.value))) {
             this.validation = false;
         }
         ;

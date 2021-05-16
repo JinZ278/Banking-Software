@@ -32,6 +32,6 @@ abstract class Accounts {
 
     public abstract double getApr();
 
-    public abstract boolean validate(double amount);
+    public abstract boolean validateAmount(double amount);
 
 }

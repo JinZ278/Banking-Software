@@ -40,7 +40,7 @@ public class Cd extends Accounts {
     }
 
     @Override
-    public boolean validate(double amount) {
+    public boolean validateAmount(double amount) {
         return false;
     }
 

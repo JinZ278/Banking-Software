@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="MasterControlTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-05-16T02:30:25" hostname="JIN-COMPOTA" time="0.036">
+<testsuite name="MasterControlTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-05-16T02:35:00" hostname="JIN-COMPOTA" time="0.004">
   <properties/>
-  <testcase name="invalid_to_create_accounts_with_same_id()" classname="MasterControlTest" time="0.031"/>
+  <testcase name="invalid_to_create_accounts_with_same_id()" classname="MasterControlTest" time="0.001"/>
   <testcase name="typo_in_create_command_is_invalid()" classname="MasterControlTest" time="0.001"/>
   <testcase name="typo_in_deposit_command_is_invalid()" classname="MasterControlTest" time="0.001"/>
-  <testcase name="two_typo_commands_both_invalid()" classname="MasterControlTest" time="0.0"/>
+  <testcase name="two_typo_commands_both_invalid()" classname="MasterControlTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
