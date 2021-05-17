@@ -115,12 +115,12 @@ public class DepositValidatorTest {
     @Test
     public void general_account_does_not_exist_in_bank() {
         bank.addAccount(QUICK_ID, checkingAccount);
-        assertTrue(depositValidator.validate(GENERAL_ACCOUNT_EXISTS, bank));
+        assertTrue(depositValidator.validate(GENERAL_ACCOUNT_DOES_NOT_EXIST, bank));
     }
 
     @Test
     public void general_account_exist_in_bank() {
-        assertFalse(depositValidator.validate(GENERAL_ACCOUNT_DOES_NOT_EXIST, bank));
+        assertFalse(depositValidator.validate(GENERAL_ACCOUNT_EXISTS, bank));
     }
 
     @Test

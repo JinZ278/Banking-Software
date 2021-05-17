@@ -1,25 +1,27 @@
 public class CommandValidator {
+    protected Bank bank;
     protected boolean validation;
     CreateValidator createValidator;
     DepositValidator depositValidator;
 
-    CommandValidator() {
+    CommandValidator(Bank bank) {
+        this.bank = bank;
         this.validation = false;
     }
 
-    public boolean validate(String command_string, Bank bank) {
+    public boolean validate(String command_string) {
         String[] stringInfoInArray = command_string.split(" ");
         if (command_string.isBlank()) {
             return this.validation;
         }
         if (stringInfoInArray[0].toLowerCase().equals("create")) {
             createValidator = new CreateValidator();
-            this.validation = createValidator.validate(command_string, bank);
+            this.validation = createValidator.validate(command_string, this.bank);
         }
 
         if (stringInfoInArray[0].toLowerCase().equals("deposit")) {
             depositValidator = new DepositValidator();
-            this.validation = depositValidator.validate(command_string, bank);
+            this.validation = depositValidator.validate(command_string, this.bank);
         }
 
         return this.validation;

@@ -61,7 +61,7 @@ public class DepositValidator {
     private void accountCheck(Bank bank) {
         Accounts account = bank.getAccounts().get(this.accountId);
         if (bank.getAccounts().get(this.accountId) != null) {
-            determineAccountClass(account);
+            valueCheck(account);
         }
     }
 
@@ -102,25 +102,11 @@ public class DepositValidator {
         }
     }
 
-    public void determineAccountClass(Accounts account) {
-        if (account.getClass() == checking.getClass()) {
-            valueCheck(0, 1000);
-        }
-        if (account.getClass() == savings.getClass()) {
-            valueCheck(0, 2500);
-        }
-        if (account.getClass() == cd.getClass()) {
+    public void valueCheck(Accounts accounts) {
+        if (!accounts.validateAmount(Double.parseDouble(this.value))) {
             this.validation = false;
         }
-    }
-
-    public void valueCheck(int min, int max) {
-        if (Double.parseDouble(this.value) < min) {
-            this.validation = false;
-        }
-        if (Double.parseDouble(this.value) > max) {
-            this.validation = false;
-        }
+        ;
     }
 
 }
