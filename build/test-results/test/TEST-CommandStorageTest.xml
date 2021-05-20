@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CommandStorageTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-05-16T02:42:37" hostname="JIN-COMPOTA" time="0.004">
+<testsuite name="CommandStorageTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-17T19:48:10" hostname="JIN-COMPOTA" time="0.019">
   <properties/>
-  <testcase name="returning_invalid_commands()" classname="CommandStorageTest" time="0.001"/>
-  <testcase name="adding_invalid_strings()" classname="CommandStorageTest" time="0.002"/>
+  <testcase name="initially_empty_list()" classname="CommandStorageTest" time="0.019"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
