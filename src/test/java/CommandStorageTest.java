@@ -44,7 +44,15 @@ public class CommandStorageTest {
 
     @Test
     public void returning_all_strings() {
-        
+        commandStorage.addInvalidString(INVALID_STRING);
+        commandStorage.addInvalidString(ANOTHER_STRING);
+        commandStorage.addInvalidString(INVALID_STRING);
+        commandStorage.addInvalidString(INVALID_STRING);
+        list1.add(INVALID_STRING);
+        list1.add(ANOTHER_STRING);
+        list1.add(INVALID_STRING);
+        list1.add(INVALID_STRING);
+        assertEquals(list1, commandStorage.getInvalidStrings());
     }
 
 }
