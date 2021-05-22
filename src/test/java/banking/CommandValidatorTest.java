@@ -8,8 +8,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CommandValidatorTest {
 
-    public final String CREATE_SAVINGS = "Create banking.Savings 12345678 1.2";
-    public final String WRONG_CREATE_SAVINGS = "Create banking.Savings 22 2.2";
+    public final String CREATE_SAVINGS = "Create Savings 12345678 1.2";
+    public final String WRONG_CREATE_SAVINGS = "Create Savings 22 2.2";
 
     public final String DEPOSIT_CHECKING = "Deposit 11122233 250.3";
     public final String WRONG_DEPOSIT_CHECKING = "Deposit 11122233 25022.3";
