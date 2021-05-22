@@ -1,3 +1,5 @@
+package banking;
+
 abstract class Accounts {
 
     protected double apr;

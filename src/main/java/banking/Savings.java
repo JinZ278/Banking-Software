@@ -1,13 +1,16 @@
-public class Cd extends Accounts {
+package banking;
 
-    public final int MIN_STARTING_AMOUNT = 1000;
-    public final int MAX_STARTING_AMOUNT = 10000;
+public class Savings extends Accounts {
+
+    public final int STARTING_AMOUNT = 0;
     public final double MIN_APR = 0;
     public final double MAX_APR = 10;
+    public final double MIN_DEPOSIT = 0;
+    public final double MAX_DEPOSIT = 1000;
 
 
-    Cd(double apr, double balance) {
-        super(apr, balance);
+    Savings(double apr) {
+        super(apr, 0);
     }
 
     @Override
@@ -41,7 +44,10 @@ public class Cd extends Accounts {
 
     @Override
     public boolean validateAmount(double amount) {
-        return false;
+        if (amount >= MIN_DEPOSIT && amount <= MAX_DEPOSIT) {
+            return true;
+        } else {
+            return false;
+        }
     }
-
 }

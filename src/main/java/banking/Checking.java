@@ -1,3 +1,5 @@
+package banking;
+
 public class Checking extends Accounts {
 
     public final int MIN_STARTING_AMOUNT = 0;

@@ -1,3 +1,5 @@
+package banking;
+
 import java.util.ArrayList;
 
 public class CommandStorage {
@@ -17,5 +19,9 @@ public class CommandStorage {
 
     public ArrayList<String> getInvalidStrings() {
         return this.invalidStrings;
+    }
+
+    public void clearList() {
+        this.invalidStrings = new ArrayList<>();
     }
 }

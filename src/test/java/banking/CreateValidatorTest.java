@@ -1,3 +1,5 @@
+package banking;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -6,12 +8,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CreateValidatorTest {
 
-    public final String GENERAL_EXTRA_SPACE_FRONT = "  Create Checking 12345678 1.5";
-    public final String GENERAL_EXTRA_SPACE_MIDDLE = "Create Checking  12345678 1.5";
-    public final String GENERAL_EXTRA_SPACE_END = "Create Checking 12345678 1.5  ";
+    public final String GENERAL_EXTRA_SPACE_FRONT = "  Create banking.Checking 12345678 1.5";
+    public final String GENERAL_EXTRA_SPACE_MIDDLE = "Create banking.Checking  12345678 1.5";
+    public final String GENERAL_EXTRA_SPACE_END = "Create banking.Checking 12345678 1.5  ";
     public final String GENERAL_CASE_INSENSITIVITY = "CReATe ChECKing 12345678 2.3";
 
-    public final String GENERAL_MISSING_COMMAND = "Checking 12345678 1.5";
+    public final String GENERAL_MISSING_COMMAND = "banking.Checking 12345678 1.5";
     public final String GENERAL_WRONG_COMMAND = "Cremate checking 12345678 1.9";
     public final String GENERAL_NON_STRING_COMMAND = "23124 chicken 12345678 1.3";
 
@@ -19,11 +21,11 @@ public class CreateValidatorTest {
     public final String GENERAL_9_DIGIT_ID = "Create checking 123456789 2.2";
     public final String GENERAL_7_DIGIT_ID = "Create checking 1234567 3.2";
     public final String GENERAL_ID_HAS_CHARACTERS = "Create checking 123^5t78 1.1";
-    public final String GENERAL_ID_IS_DECIMAL = "Create Checking 1234567.9 1.5";
-    public final String GENERAL_LOWEST_ID = "Create Checking 00000000 1.5";
-    public final String GENERAL_HIGHEST_ID = "Create Checking 99999999 1.8";
-    public final String GENERAL_NEGATIVE_ID = "Create Checking -12345678 1.2";
-    public final String GENERAL_STRING_AS_APR = "Create Checking 00002300 hi";
+    public final String GENERAL_ID_IS_DECIMAL = "Create banking.Checking 1234567.9 1.5";
+    public final String GENERAL_LOWEST_ID = "Create banking.Checking 00000000 1.5";
+    public final String GENERAL_HIGHEST_ID = "Create banking.Checking 99999999 1.8";
+    public final String GENERAL_NEGATIVE_ID = "Create banking.Checking -12345678 1.2";
+    public final String GENERAL_STRING_AS_APR = "Create banking.Checking 00002300 hi";
 
     public final String QUICK_ID = "12345678";
 
@@ -31,26 +33,26 @@ public class CreateValidatorTest {
     public final String CREATE_COMMAND_WRONG_ACCOUNT = "Create Chicken 12345678 1.5";
     public final String CREATE_COMMAND_NON_STRING_ACCOUNT = "Create 123123 12345678 1.3";
 
-    public final String CREATE_CHECKING_COMMAND = "Create Checking 12345678 1.5";
-    public final String CREATE_CHECKING_COMMAND_MISSING_ID = "Create Checking 1.0";
+    public final String CREATE_CHECKING_COMMAND = "Create banking.Checking 12345678 1.5";
+    public final String CREATE_CHECKING_COMMAND_MISSING_ID = "Create banking.Checking 1.0";
 
-    public final String CREATE_CHECKING_COMMAND_MISSING_APR = "Create Checking 12345678";
-    public final String CREATE_CHECKING_COMMAND_NEGATIVE_APR = "Create Checking 12345678 -1.5";
-    public final String CREATE_CHECKING_COMMAND_MINIMUM_APR = "Create Checking 12345678 0";
-    public final String CREATE_CHECKING_COMMAND_MAXIMUM_APR = "Create Checking 12345678 10";
-    public final String CREATE_CHECKING_COMMAND_ABOVE_MAXIMUM_APR = "Create Checking 12345678 101";
+    public final String CREATE_CHECKING_COMMAND_MISSING_APR = "Create banking.Checking 12345678";
+    public final String CREATE_CHECKING_COMMAND_NEGATIVE_APR = "Create banking.Checking 12345678 -1.5";
+    public final String CREATE_CHECKING_COMMAND_MINIMUM_APR = "Create banking.Checking 12345678 0";
+    public final String CREATE_CHECKING_COMMAND_MAXIMUM_APR = "Create banking.Checking 12345678 10";
+    public final String CREATE_CHECKING_COMMAND_ABOVE_MAXIMUM_APR = "Create banking.Checking 12345678 101";
 
-    public final String CREATE_SAVINGS_COMMAND = "Create Savings 12345678 1.2";
-    public final String CREATE_SAVINGS_COMMAND_MISSING_ID = "Create Savings 1.2";
+    public final String CREATE_SAVINGS_COMMAND = "Create banking.Savings 12345678 1.2";
+    public final String CREATE_SAVINGS_COMMAND_MISSING_ID = "Create banking.Savings 1.2";
 
-    public final String CREATE_SAVINGS_COMMAND_MISSING_INPUT = "Create Savings 12345678";
-    public final String CREATE_SAVINGS_COMMAND_EXTRA_INPUT = "Create Savings 12345678 1.3 1000";
+    public final String CREATE_SAVINGS_COMMAND_MISSING_INPUT = "Create banking.Savings 12345678";
+    public final String CREATE_SAVINGS_COMMAND_EXTRA_INPUT = "Create banking.Savings 12345678 1.3 1000";
 
-    public final String CREATE_CD_COMMAND_ZERO_BALANCE = "Create Cd 12345678 1.4 0";
-    public final String CREATE_CD_COMMAND_MIN_BALANCE = "Create Cd 12345678 1.4 1000";
-    public final String CREATE_CD_COMMAND_MAX_BALANCE = "Create Cd 12345678 1.2 10000";
-    public final String CREATE_CD_COMMAND_OVER_MAX_BALANCE = "Create Cd 12345678 1.2 100001";
-    public final String CREATE_CD_COMMAND_DECIMAL_BALANCE = "Create Cd 12345678 1.2 1000.01";
+    public final String CREATE_CD_COMMAND_ZERO_BALANCE = "Create banking.Cd 12345678 1.4 0";
+    public final String CREATE_CD_COMMAND_MIN_BALANCE = "Create banking.Cd 12345678 1.4 1000";
+    public final String CREATE_CD_COMMAND_MAX_BALANCE = "Create banking.Cd 12345678 1.2 10000";
+    public final String CREATE_CD_COMMAND_OVER_MAX_BALANCE = "Create banking.Cd 12345678 1.2 100001";
+    public final String CREATE_CD_COMMAND_DECIMAL_BALANCE = "Create banking.Cd 12345678 1.2 1000.01";
 
     public final String CREATE_CD_COMMAND_EXTRA_INPUT = "Create cd 12345678 1.3 10000 10000";
     public final String CREATE_CD_COMMAND_MISSING_INPUT = "Create cd 12345678 1.3";

@@ -1,3 +1,5 @@
+package banking;
+
 import static java.lang.Integer.parseInt;
 
 public class DepositValidator {

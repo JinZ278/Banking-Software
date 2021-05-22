@@ -1,3 +1,5 @@
+package banking;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -5,10 +7,10 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CommandProcessorTest {
 
-    public final String VALID_CREATE_COMMAND = "Create Checking 12345678 1";
-    public final String VALID_CREATE_CHECKING_COMMAND = "Create Checking 12345678 1.5";
-    public final String VALID_CREATE_SAVINGS_COMMAND = "Create Savings 29292929 3.0";
-    public final String VALID_CREATE_CD_COMMAND = "Create Cd 99999999 5.7 1000";
+    public final String VALID_CREATE_COMMAND = "Create banking.Checking 12345678 1";
+    public final String VALID_CREATE_CHECKING_COMMAND = "Create banking.Checking 12345678 1.5";
+    public final String VALID_CREATE_SAVINGS_COMMAND = "Create banking.Savings 29292929 3.0";
+    public final String VALID_CREATE_CD_COMMAND = "Create banking.Cd 99999999 5.7 1000";
 
     public final String VALID_DEPOSIT_CHECKING_COMMAND = "Deposit 12345678 1200";
     public final String VALID_DEPOSIT_SAVINGS_COMMAND = "Deposit 29292929 2000";
