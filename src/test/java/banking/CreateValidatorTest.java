@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CreateValidatorTest {
 
+    public final String GENERAL_QUOTES_INPUT = "Create '' 12345678 1.6";
     public final String GENERAL_EXTRA_SPACE_FRONT = "  Create Checking 12345678 1.5";
     public final String GENERAL_EXTRA_SPACE_MIDDLE = "Create Checking  12345678 1.5";
     public final String GENERAL_EXTRA_SPACE_END = "Create Checking 12345678 1.5  ";
@@ -34,7 +35,7 @@ public class CreateValidatorTest {
     public final String CREATE_COMMAND_NON_STRING_ACCOUNT = "Create 123123 12345678 1.3";
 
     public final String CREATE_CHECKING_COMMAND = "Create Checking 12345678 1.5";
-    public final String CREATE_CHECKING_COMMAND_MISSING_ID = "Create banking.Checking 1.0";
+    public final String CREATE_CHECKING_COMMAND_MISSING_ID = "Create Checking 1.0";
 
     public final String CREATE_CHECKING_COMMAND_MISSING_APR = "Create Checking 12345678";
     public final String CREATE_CHECKING_COMMAND_NEGATIVE_APR = "Create Checking 12345678 -1.5";
@@ -71,6 +72,11 @@ public class CreateValidatorTest {
         bank = new Bank();
         account = Accounts.checking(1);
         account2 = Accounts.savings(2);
+    }
+
+    @Test
+    public void general_quotes_as_input() {
+        assertFalse(createValidator.validate(GENERAL_QUOTES_INPUT, bank));
     }
 
     @Test

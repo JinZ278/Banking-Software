@@ -24,7 +24,6 @@ class CreateValidator {
     public boolean validate(String commandString, Bank bank) {
         String newString = stringIsSpaces(commandString);
         stringSplitter(newString);
-        emptyInputs();
         idCheck(bank);
         aprCheck();
         valueCheck();
@@ -34,7 +33,7 @@ class CreateValidator {
     private String stringIsSpaces(String commandString) {
         if (commandString.isBlank()) {
             this.validation = false;
-            return "0";
+            return "";
         } else {
             return commandString;
         }
@@ -48,12 +47,6 @@ class CreateValidator {
         if (firstWord.equals("create")) {
             this.mainCommand = newStringSplitIntoArray[0].toLowerCase();
             stringAssignerCreate(newStringSplitIntoArray);
-        }
-    }
-
-    private void emptyInputs() {
-        if (this.mainCommand.equals("") || this.accountType.equals("") || this.accountId.equals("") || this.accountApr.equals("")) {
-            this.validation = false;
         }
     }
 

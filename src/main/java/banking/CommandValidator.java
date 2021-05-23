@@ -14,7 +14,7 @@ public class CommandValidator {
     public boolean validate(String command_string) {
         String[] stringInfoInArray = command_string.split(" ");
         if (command_string.isBlank()) {
-            return this.validation;
+            return false;
         }
         if (stringInfoInArray[0].toLowerCase().equals("create")) {
             createValidator = new CreateValidator();

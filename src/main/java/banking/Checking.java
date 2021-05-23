@@ -36,7 +36,7 @@ public class Checking extends Accounts {
     }
 
     public double withdrawOverBalance(double num) {
-        if (this.balance < num) {
+        if (this.balance <= num) {
             return this.balance;
         } else {
             return num;
