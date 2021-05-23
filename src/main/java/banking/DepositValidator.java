@@ -23,7 +23,6 @@ public class DepositValidator {
     public boolean validate(String commandString, Bank bank) {
         String newString = stringIsSpaces(commandString);
         stringSplitter(newString);
-        emptyInputs();
         idCheck(bank);
         accountCheck(bank);
         return this.validation;
@@ -32,7 +31,7 @@ public class DepositValidator {
     private String stringIsSpaces(String string) {
         if (string.isBlank()) {
             this.validation = false;
-            return "0";
+            return "";
         } else {
             return string;
         }
@@ -45,12 +44,6 @@ public class DepositValidator {
         if (firstWord.equals("deposit")) {
             this.mainCommand = newStringSplitInArray[0].toLowerCase();
             stringAssignerDeposit(newStringSplitInArray);
-        }
-    }
-
-    private void emptyInputs() {
-        if (this.mainCommand.equals("") || this.accountId.equals("") || this.value.equals("")) {
-            this.validation = false;
         }
     }
 

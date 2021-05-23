@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="banking.CommandProcessorTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2021-05-23T19:10:41" hostname="JIN-COMPOTA" time="0.012">
+<testsuite name="banking.CommandProcessorTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2021-05-23T19:18:50" hostname="JIN-COMPOTA" time="0.016">
   <properties/>
   <testcase name="processor_creates_account()" classname="banking.CommandProcessorTest" time="0.005"/>
   <testcase name="process_create_checking_command()" classname="banking.CommandProcessorTest" time="0.001"/>
   <testcase name="process_deposit_savings_command()" classname="banking.CommandProcessorTest" time="0.001"/>
   <testcase name="process_create_cd_command()" classname="banking.CommandProcessorTest" time="0.001"/>
-  <testcase name="process_deposit_checking_command()" classname="banking.CommandProcessorTest" time="0.001"/>
-  <testcase name="process_deposit_twice()" classname="banking.CommandProcessorTest" time="0.001"/>
+  <testcase name="process_deposit_checking_command()" classname="banking.CommandProcessorTest" time="0.0"/>
+  <testcase name="process_deposit_twice()" classname="banking.CommandProcessorTest" time="0.0"/>
   <testcase name="process_create_savings_command()" classname="banking.CommandProcessorTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
