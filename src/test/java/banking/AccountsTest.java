@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AccountsTest {
 
-    public final float QUICK_APR = 1;
+    public final double QUICK_APR = 0.6;
 
     Accounts checking;
     Accounts savings;
@@ -27,7 +27,7 @@ public class AccountsTest {
 
     @Test
     public void checking_correct_apr() {
-        assertEquals(1, checking.getApr());
+        assertEquals(0.6, checking.getApr());
     }
 
     @Test
@@ -49,6 +49,13 @@ public class AccountsTest {
         assertEquals(0, checking.getBalance());
     }
 
+    @Test
+    public void checking_apr_calculations() {
+        checking.deposit(5000);
+        checking.aprCalculate();
+        assertEquals(5002.50, checking.getBalance());
+    }
+
     //
 
     @Test
@@ -58,7 +65,7 @@ public class AccountsTest {
 
     @Test
     public void savings_correct_apr() {
-        assertEquals(2, savings.getApr());
+        assertEquals(1.6, savings.getApr());
     }
 
     @Test
@@ -80,6 +87,13 @@ public class AccountsTest {
         assertEquals(0, savings.getBalance());
     }
 
+    @Test
+    public void savings_apr_calculations() {
+        savings.deposit(5000);
+        savings.aprCalculate();
+        assertEquals(5006.66, savings.getBalance());
+    }
+
     //
 
     @Test
@@ -89,7 +103,7 @@ public class AccountsTest {
 
     @Test
     public void cd_correct_apr() {
-        assertEquals(3, cd.getApr());
+        assertEquals(2.6, cd.getApr());
     }
 
     @Test

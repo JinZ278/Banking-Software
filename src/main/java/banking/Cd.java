@@ -46,4 +46,20 @@ public class Cd extends Accounts {
         return false;
     }
 
+    @Override
+    public void aprCalculate() {
+        double rate = this.apr / 100 / 12;
+        double interest = rate * this.balance;
+
+        this.balance += interest;
+        interest = rate * this.balance;
+        this.balance += interest;
+        interest = rate * this.balance;
+        this.balance += interest;
+        interest = rate * this.balance;
+        this.balance += interest;
+
+        this.balance = rounder(this.balance);
+    }
+
 }

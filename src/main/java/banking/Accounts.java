@@ -1,13 +1,16 @@
 package banking;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+
 abstract class Accounts {
 
     protected double apr;
     protected double balance;
 
     Accounts(double apr, double balance) {
-        this.apr = apr;
-        this.balance = balance;
+        this.apr = rounder(apr);
+        this.balance = rounder(balance);
     }
 
     static Accounts checking(double apr) {
@@ -25,6 +28,13 @@ abstract class Accounts {
         return cd;
     }
 
+    public double rounder(double amount) {
+        DecimalFormat decimalFormat = new DecimalFormat("0.00");
+        decimalFormat.setRoundingMode(RoundingMode.FLOOR);
+        String value = decimalFormat.format(amount);
+        return Double.parseDouble(value);
+    }
+
 
     public abstract double getBalance();
 
@@ -35,5 +45,7 @@ abstract class Accounts {
     public abstract double getApr();
 
     public abstract boolean validateAmount(double amount);
+
+    public abstract void aprCalculate();
 
 }
