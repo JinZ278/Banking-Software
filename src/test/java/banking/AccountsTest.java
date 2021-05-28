@@ -119,6 +119,13 @@ public class AccountsTest {
         assertEquals(0, cd.getBalance());
     }
 
+    @Test
+    public void cd_apr_calculations() {
+        cd.deposit(5000);
+        cd.aprCalculate();
+        assertEquals(6052.16, cd.getBalance());
+    }
+
     //
 
     @Test
@@ -128,9 +135,21 @@ public class AccountsTest {
     }
 
     @Test
+    public void apr_is_always_two_decimals() {
+        checking = Accounts.checking(1.1333333333333333333333);
+        assertEquals(1.13, checking.getApr());
+    }
+
+    @Test
     public void decimal_balance() {
         cd = Accounts.cd(1, 10001.99);
         assertEquals(10001.99, cd.getBalance());
+    }
+
+    @Test
+    public void balance_is_always_two_decimals() {
+        cd = Accounts.cd(1, 1021.92329);
+        assertEquals(1021.92, cd.getBalance());
     }
 
     @Test
@@ -141,9 +160,24 @@ public class AccountsTest {
     }
 
     @Test
+    public void both_balance_and_apr_are_always_two_decimals() {
+        cd = Accounts.cd(9.6923, 1080.4288);
+        assertEquals(9.69, cd.getApr());
+        assertEquals(1080.42, cd.getBalance());
+    }
+
+    @Test
     public void depositing_decimal_amounts() {
         checking.deposit(2.55);
         assertEquals(2.55, checking.getBalance());
+    }
+
+    @Test
+    public void balance_is_two_decimals_after_deposit() {
+        checking.deposit(2.55);
+        assertEquals(2.55, checking.getBalance());
+        checking.deposit(6.66666);
+        assertEquals(9.21, checking.getBalance());
     }
 
     @Test
@@ -151,6 +185,14 @@ public class AccountsTest {
         savings.deposit(500);
         savings.withdraw(200.98);
         assertEquals(299.02, savings.getBalance());
+    }
+
+    @Test
+    public void balance_is_two_decimals_after_withdraw() {
+        savings.deposit(944);
+        assertEquals(944, savings.getBalance());
+        savings.withdraw(111.1111111);
+        assertEquals(832.89, savings.getBalance());
     }
 
     @Test

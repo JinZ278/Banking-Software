@@ -24,13 +24,13 @@ public class Cd extends Accounts {
 
     @Override
     public void deposit(double amount) {
-        this.balance += amount;
+        this.balance += rounder(amount);
     }
 
     @Override
     public void withdraw(double amount) {
         double withdrawal = withdrawOverBalance(amount);
-        this.balance -= withdrawal;
+        this.balance -= rounder(withdrawal);
     }
 
     public double withdrawOverBalance(double num) {
