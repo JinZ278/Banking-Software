@@ -16,6 +16,7 @@ public class CommandValidator {
         if (command_string.isBlank()) {
             return false;
         }
+
         if (stringInfoInArray[0].toLowerCase().equals("create")) {
             createValidator = new CreateValidator();
             this.validation = createValidator.validate(command_string, this.bank);

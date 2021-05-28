@@ -20,6 +20,6 @@ public class Bank {
     }
 
     public void removeAccount(String quickId) {
-
+        accounts.remove(quickId);
     }
 }

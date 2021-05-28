@@ -9,9 +9,6 @@ public class DepositValidator {
     protected String value;
     protected boolean validation;
 
-    Accounts checking = Accounts.checking(1);
-    Accounts savings = Accounts.savings(1);
-    Accounts cd = Accounts.cd(1, 1000);
 
     DepositValidator() {
         this.mainCommand = "";

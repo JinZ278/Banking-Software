@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="banking.CreateProcessorTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-05-23T19:18:50" hostname="JIN-COMPOTA" time="0.003">
-  <properties/>
-  <testcase name="create_cd_account()" classname="banking.CreateProcessorTest" time="0.001"/>
-  <testcase name="initially_no_accounts()" classname="banking.CreateProcessorTest" time="0.001"/>
-  <testcase name="create_checking_account()" classname="banking.CreateProcessorTest" time="0.0"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
