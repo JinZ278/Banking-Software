@@ -4,7 +4,6 @@ import static java.lang.Integer.parseInt;
 
 class CreateValidator {
 
-    protected String mainCommand;
     protected String accountType;
     protected String accountId;
     protected String accountApr;
@@ -12,7 +11,6 @@ class CreateValidator {
     protected boolean validation;
 
     CreateValidator() {
-        this.mainCommand = "";
         this.accountType = "";
         this.accountId = "";
         this.accountApr = "";
@@ -21,7 +19,7 @@ class CreateValidator {
     }
 
 
-    public boolean validate(String commandString, Bank bank) {
+    public boolean passValidate(String commandString, Bank bank) {
         String newString = stringIsSpaces(commandString);
         stringSplitter(newString);
         idCheck(bank);
@@ -45,7 +43,6 @@ class CreateValidator {
         String firstWord = newStringSplitIntoArray[0].toLowerCase();
 
         if (firstWord.equals("create")) {
-            this.mainCommand = newStringSplitIntoArray[0].toLowerCase();
             stringAssignerCreate(newStringSplitIntoArray);
         }
     }
@@ -100,7 +97,7 @@ class CreateValidator {
     }
 
     public void idExistsInBank(Bank bank) {
-        if (this.mainCommand.equals("create") && bank.getAccounts().get(this.accountId) != null) {
+        if (bank.getAccounts().get(this.accountId) != null) {
             this.validation = false;
         }
     }

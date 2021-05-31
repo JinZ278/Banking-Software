@@ -4,20 +4,18 @@ import static java.lang.Integer.parseInt;
 
 public class DepositValidator {
 
-    protected String mainCommand;
     protected String accountId;
     protected String value;
     protected boolean validation;
 
 
     DepositValidator() {
-        this.mainCommand = "";
         this.accountId = "";
         this.value = "";
         this.validation = true;
     }
 
-    public boolean validate(String commandString, Bank bank) {
+    public boolean depositValidate(String commandString, Bank bank) {
         String newString = stringIsSpaces(commandString);
         stringSplitter(newString);
         idCheck(bank);
@@ -39,7 +37,6 @@ public class DepositValidator {
         String firstWord = newStringSplitInArray[0].toLowerCase();
 
         if (firstWord.equals("deposit")) {
-            this.mainCommand = newStringSplitInArray[0].toLowerCase();
             stringAssignerDeposit(newStringSplitInArray);
         }
     }

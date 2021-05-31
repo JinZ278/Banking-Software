@@ -76,205 +76,205 @@ public class CreateValidatorTest {
 
     @Test
     public void general_quotes_as_input() {
-        assertFalse(createValidator.validate(GENERAL_QUOTES_INPUT, bank));
+        assertFalse(createValidator.passValidate(GENERAL_QUOTES_INPUT, bank));
     }
 
     @Test
     public void general_extra_space_front() {
-        assertFalse(createValidator.validate(GENERAL_EXTRA_SPACE_FRONT, bank));
+        assertFalse(createValidator.passValidate(GENERAL_EXTRA_SPACE_FRONT, bank));
     }
 
     @Test
     public void general_extra_space_middle() {
-        assertFalse(createValidator.validate(GENERAL_EXTRA_SPACE_MIDDLE, bank));
+        assertFalse(createValidator.passValidate(GENERAL_EXTRA_SPACE_MIDDLE, bank));
     }
 
     @Test
     public void general_extra_space_end() {
-        assertTrue(createValidator.validate(GENERAL_EXTRA_SPACE_END, bank));
+        assertTrue(createValidator.passValidate(GENERAL_EXTRA_SPACE_END, bank));
     }
 
     @Test
     public void general_insensitive_case() {
-        assertTrue(createValidator.validate(GENERAL_CASE_INSENSITIVITY, bank));
+        assertTrue(createValidator.passValidate(GENERAL_CASE_INSENSITIVITY, bank));
     }
 
     @Test
     public void general_missing_command() {
-        assertFalse(createValidator.validate(GENERAL_MISSING_COMMAND, bank));
+        assertFalse(createValidator.passValidate(GENERAL_MISSING_COMMAND, bank));
     }
 
     @Test
     public void general_wrong_command() {
-        assertFalse(createValidator.validate(GENERAL_WRONG_COMMAND, bank));
+        assertFalse(createValidator.passValidate(GENERAL_WRONG_COMMAND, bank));
     }
 
     @Test
     public void general_non_string_command() {
-        assertFalse(createValidator.validate(GENERAL_NON_STRING_COMMAND, bank));
+        assertFalse(createValidator.passValidate(GENERAL_NON_STRING_COMMAND, bank));
     }
 
     @Test
     public void general_id_already_exists() {
         bank.addAccount(QUICK_ID, account);
-        assertFalse(createValidator.validate(GENERAL_EXISTING_ID, bank));
+        assertFalse(createValidator.passValidate(GENERAL_EXISTING_ID, bank));
     }
 
     @Test
     public void general_9_digit_id() {
-        assertFalse(createValidator.validate(GENERAL_9_DIGIT_ID, bank));
+        assertFalse(createValidator.passValidate(GENERAL_9_DIGIT_ID, bank));
     }
 
     @Test
     public void general_7_digit_id() {
-        assertFalse(createValidator.validate(GENERAL_7_DIGIT_ID, bank));
+        assertFalse(createValidator.passValidate(GENERAL_7_DIGIT_ID, bank));
     }
 
     @Test
     public void general_id_has_characters() {
-        assertFalse(createValidator.validate(GENERAL_ID_HAS_CHARACTERS, bank));
+        assertFalse(createValidator.passValidate(GENERAL_ID_HAS_CHARACTERS, bank));
     }
 
     @Test
     public void general_decimal_id() {
-        assertFalse(createValidator.validate(GENERAL_ID_IS_DECIMAL, bank));
+        assertFalse(createValidator.passValidate(GENERAL_ID_IS_DECIMAL, bank));
     }
 
     @Test
     public void general_lowest_id() {
-        assertTrue(createValidator.validate(GENERAL_LOWEST_ID, bank));
+        assertTrue(createValidator.passValidate(GENERAL_LOWEST_ID, bank));
     }
 
     @Test
     public void general_highest_id() {
-        assertTrue(createValidator.validate(GENERAL_HIGHEST_ID, bank));
+        assertTrue(createValidator.passValidate(GENERAL_HIGHEST_ID, bank));
     }
 
     @Test
     public void general_negative_id() {
-        assertFalse(createValidator.validate(GENERAL_NEGATIVE_ID, bank));
+        assertFalse(createValidator.passValidate(GENERAL_NEGATIVE_ID, bank));
     }
 
     @Test
     public void general_string_as_apr() {
-        assertFalse(createValidator.validate(GENERAL_STRING_AS_APR, bank));
+        assertFalse(createValidator.passValidate(GENERAL_STRING_AS_APR, bank));
     }
 
     /**********************************************Seperator***********************************************************/
 
     @Test
     public void create_checking_missing_account() {
-        assertFalse(createValidator.validate(CREATE_COMMAND_MISSING_ACCOUNT, bank));
+        assertFalse(createValidator.passValidate(CREATE_COMMAND_MISSING_ACCOUNT, bank));
     }
 
     @Test
     public void create_wrong_account() {
-        assertFalse(createValidator.validate(CREATE_COMMAND_WRONG_ACCOUNT, bank));
+        assertFalse(createValidator.passValidate(CREATE_COMMAND_WRONG_ACCOUNT, bank));
     }
 
     @Test
     public void create_non_string_account() {
-        assertFalse(createValidator.validate(CREATE_COMMAND_NON_STRING_ACCOUNT, bank));
+        assertFalse(createValidator.passValidate(CREATE_COMMAND_NON_STRING_ACCOUNT, bank));
     }
 
     @Test
     public void create_correct_checking_string() {
-        assertTrue(createValidator.validate(CREATE_CHECKING_COMMAND, bank));
+        assertTrue(createValidator.passValidate(CREATE_CHECKING_COMMAND, bank));
     }
 
     @Test
     public void create_checking_missing_id() {
-        assertFalse(createValidator.validate(CREATE_CHECKING_COMMAND_MISSING_ID, bank));
+        assertFalse(createValidator.passValidate(CREATE_CHECKING_COMMAND_MISSING_ID, bank));
     }
 
     @Test
     public void create_checking_missing_apr() {
-        assertFalse(createValidator.validate(CREATE_CHECKING_COMMAND_MISSING_APR, bank));
+        assertFalse(createValidator.passValidate(CREATE_CHECKING_COMMAND_MISSING_APR, bank));
     }
 
     @Test
     public void create_checking_negative_apr() {
-        assertFalse(createValidator.validate(CREATE_CHECKING_COMMAND_NEGATIVE_APR, bank));
+        assertFalse(createValidator.passValidate(CREATE_CHECKING_COMMAND_NEGATIVE_APR, bank));
     }
 
     @Test
     public void create_checking_minimum_apr() {
-        assertTrue(createValidator.validate(CREATE_CHECKING_COMMAND_MINIMUM_APR, bank));
+        assertTrue(createValidator.passValidate(CREATE_CHECKING_COMMAND_MINIMUM_APR, bank));
     }
 
     @Test
     public void create_checking_maximum_apr() {
-        assertTrue(createValidator.validate(CREATE_CHECKING_COMMAND_MAXIMUM_APR, bank));
+        assertTrue(createValidator.passValidate(CREATE_CHECKING_COMMAND_MAXIMUM_APR, bank));
     }
 
     @Test
     public void create_checking_above_maximum_apr() {
-        assertFalse(createValidator.validate(CREATE_CHECKING_COMMAND_ABOVE_MAXIMUM_APR, bank));
+        assertFalse(createValidator.passValidate(CREATE_CHECKING_COMMAND_ABOVE_MAXIMUM_APR, bank));
     }
 
     @Test
     public void create_correct_savings_string() {
-        assertTrue(createValidator.validate(CREATE_SAVINGS_COMMAND, bank));
+        assertTrue(createValidator.passValidate(CREATE_SAVINGS_COMMAND, bank));
     }
 
     @Test
     public void create_savings_missing_id() {
-        assertFalse(createValidator.validate(CREATE_SAVINGS_COMMAND_MISSING_ID, bank));
+        assertFalse(createValidator.passValidate(CREATE_SAVINGS_COMMAND_MISSING_ID, bank));
     }
 
     @Test
     public void create_savings_missing_input() {
-        assertFalse(createValidator.validate(CREATE_SAVINGS_COMMAND_MISSING_INPUT, bank));
+        assertFalse(createValidator.passValidate(CREATE_SAVINGS_COMMAND_MISSING_INPUT, bank));
     }
 
     @Test
     public void create_savings_extra_input() {
-        assertFalse(createValidator.validate(CREATE_SAVINGS_COMMAND_EXTRA_INPUT, bank));
+        assertFalse(createValidator.passValidate(CREATE_SAVINGS_COMMAND_EXTRA_INPUT, bank));
     }
 
     @Test
     public void create_cd_empty_balance() {
-        assertFalse(createValidator.validate(CREATE_CD_COMMAND_ZERO_BALANCE, bank));
+        assertFalse(createValidator.passValidate(CREATE_CD_COMMAND_ZERO_BALANCE, bank));
     }
 
     @Test
     public void create_cd_min_balance() {
-        assertTrue(createValidator.validate(CREATE_CD_COMMAND_MIN_BALANCE, bank));
+        assertTrue(createValidator.passValidate(CREATE_CD_COMMAND_MIN_BALANCE, bank));
     }
 
     @Test
     public void create_cd_max_balance() {
-        assertTrue(createValidator.validate(CREATE_CD_COMMAND_MAX_BALANCE, bank));
+        assertTrue(createValidator.passValidate(CREATE_CD_COMMAND_MAX_BALANCE, bank));
     }
 
     @Test
     public void create_cd_over_max_balance() {
-        assertFalse(createValidator.validate(CREATE_CD_COMMAND_OVER_MAX_BALANCE, bank));
+        assertFalse(createValidator.passValidate(CREATE_CD_COMMAND_OVER_MAX_BALANCE, bank));
     }
 
     @Test
     public void create_cd_decimal_balance() {
-        assertTrue(createValidator.validate(CREATE_CD_COMMAND_DECIMAL_BALANCE, bank));
+        assertTrue(createValidator.passValidate(CREATE_CD_COMMAND_DECIMAL_BALANCE, bank));
     }
 
     @Test
     public void create_cd_extra_input() {
-        assertFalse(createValidator.validate(CREATE_CD_COMMAND_EXTRA_INPUT, bank));
+        assertFalse(createValidator.passValidate(CREATE_CD_COMMAND_EXTRA_INPUT, bank));
     }
 
     @Test
     public void create_cd_missing_input() {
-        assertFalse(createValidator.validate(CREATE_CD_COMMAND_MISSING_INPUT, bank));
+        assertFalse(createValidator.passValidate(CREATE_CD_COMMAND_MISSING_INPUT, bank));
     }
 
     @Test
     public void empty_string() {
-        assertFalse(createValidator.validate(EMPTY_STRING, bank));
+        assertFalse(createValidator.passValidate(EMPTY_STRING, bank));
     }
 
     @Test
     public void just_space() {
-        assertFalse(createValidator.validate(JUST_SPACES, bank));
+        assertFalse(createValidator.passValidate(JUST_SPACES, bank));
     }
 
 }

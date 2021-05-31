@@ -19,12 +19,12 @@ public class CommandValidator {
 
         if (stringInfoInArray[0].toLowerCase().equals("create")) {
             createValidator = new CreateValidator();
-            this.validation = createValidator.validate(command_string, this.bank);
+            this.validation = createValidator.passValidate(command_string, this.bank);
         }
 
         if (stringInfoInArray[0].toLowerCase().equals("deposit")) {
             depositValidator = new DepositValidator();
-            this.validation = depositValidator.validate(command_string, this.bank);
+            this.validation = depositValidator.depositValidate(command_string, this.bank);
         }
 
         return this.validation;

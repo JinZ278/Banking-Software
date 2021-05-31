@@ -5,12 +5,14 @@ import java.text.DecimalFormat;
 
 abstract class Accounts {
 
+    protected int months;
     protected double apr;
     protected double balance;
 
     Accounts(double apr, double balance) {
         this.apr = rounder(apr);
         this.balance = rounder(balance);
+        this.months = 0;
     }
 
     static Accounts checking(double apr) {

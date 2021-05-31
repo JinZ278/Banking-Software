@@ -69,191 +69,191 @@ public class DepositValidatorTest {
     @Test
     public void general_extra_space_front() {
         bank.addAccount(QUICK_ID, checkingAccount);
-        assertFalse(depositValidator.validate(GENERAL_EXTRA_SPACE_FRONT, bank));
+        assertFalse(depositValidator.depositValidate(GENERAL_EXTRA_SPACE_FRONT, bank));
     }
 
     @Test
     public void general_extra_space_middle() {
         bank.addAccount(QUICK_ID, checkingAccount);
-        assertFalse(depositValidator.validate(GENERAL_EXTRA_SPACE_MIDDLE, bank));
+        assertFalse(depositValidator.depositValidate(GENERAL_EXTRA_SPACE_MIDDLE, bank));
     }
 
     @Test
     public void general_extra_space_end() {
         bank.addAccount(QUICK_ID, checkingAccount);
-        assertTrue(depositValidator.validate(GENERAL_EXTRA_SPACE_END, bank));
+        assertTrue(depositValidator.depositValidate(GENERAL_EXTRA_SPACE_END, bank));
     }
 
     @Test
     public void general_case_sensitivity() {
         bank.addAccount(QUICK_ID, checkingAccount);
-        assertTrue(depositValidator.validate(GENERAL_CASE_SENSEITIVIY, bank));
+        assertTrue(depositValidator.depositValidate(GENERAL_CASE_SENSEITIVIY, bank));
     }
 
     @Test
     public void general_missing_command() {
         bank.addAccount(QUICK_ID, checkingAccount);
-        assertFalse(depositValidator.validate(GENERAL_MISSING_COMMAND, bank));
+        assertFalse(depositValidator.depositValidate(GENERAL_MISSING_COMMAND, bank));
     }
 
     @Test
     public void general_wrong_command() {
         bank.addAccount(QUICK_ID, checkingAccount);
-        assertFalse(depositValidator.validate(GENERAL_WRONG_COMMAND, bank));
+        assertFalse(depositValidator.depositValidate(GENERAL_WRONG_COMMAND, bank));
     }
 
     @Test
     public void general_non_string_command() {
         bank.addAccount(QUICK_ID, checkingAccount);
-        assertFalse(depositValidator.validate(GENERAL_NON_STRING_COMMAND, bank));
+        assertFalse(depositValidator.depositValidate(GENERAL_NON_STRING_COMMAND, bank));
     }
 
     @Test
     public void general_account_id_missing() {
         bank.addAccount(QUICK_ID, checkingAccount);
-        assertFalse(depositValidator.validate(GENERAL_ACCOUNT_ID_MISSING, bank));
+        assertFalse(depositValidator.depositValidate(GENERAL_ACCOUNT_ID_MISSING, bank));
     }
 
     @Test
     public void general_account_does_not_exist_in_bank() {
         bank.addAccount(QUICK_ID, checkingAccount);
-        assertTrue(depositValidator.validate(GENERAL_ACCOUNT_DOES_NOT_EXIST, bank));
+        assertTrue(depositValidator.depositValidate(GENERAL_ACCOUNT_DOES_NOT_EXIST, bank));
     }
 
     @Test
     public void general_account_exist_in_bank() {
-        assertFalse(depositValidator.validate(GENERAL_ACCOUNT_EXISTS, bank));
+        assertFalse(depositValidator.depositValidate(GENERAL_ACCOUNT_EXISTS, bank));
     }
 
     @Test
     public void general_9_digit_id() {
         bank.addAccount(QUICK_ID, checkingAccount);
-        assertFalse(depositValidator.validate(GENERAL_9_DIGIT_ID, bank));
+        assertFalse(depositValidator.depositValidate(GENERAL_9_DIGIT_ID, bank));
     }
 
     @Test
     public void general_7_digit_id() {
         bank.addAccount(QUICK_ID, checkingAccount);
-        assertFalse(depositValidator.validate(GENERAL_7_DIGIT_ID, bank));
+        assertFalse(depositValidator.depositValidate(GENERAL_7_DIGIT_ID, bank));
     }
 
     @Test
     public void general_id_has_character() {
         bank.addAccount(QUICK_ID, checkingAccount);
-        assertFalse(depositValidator.validate(GENERAL_ID_HAS_CHARACTERS, bank));
+        assertFalse(depositValidator.depositValidate(GENERAL_ID_HAS_CHARACTERS, bank));
     }
 
     @Test
     public void general_id_is_decimal() {
         bank.addAccount(QUICK_ID, checkingAccount);
-        assertFalse(depositValidator.validate(GENERAL_ID_IS_DECIMAL, bank));
+        assertFalse(depositValidator.depositValidate(GENERAL_ID_IS_DECIMAL, bank));
     }
 
     @Test
     public void general_lowest_id() {
         bank.addAccount("00000000", checkingAccount);
-        assertTrue(depositValidator.validate(GENERAL_LOWEST_ID, bank));
+        assertTrue(depositValidator.depositValidate(GENERAL_LOWEST_ID, bank));
     }
 
     @Test
     public void general_highest_id() {
         bank.addAccount("99999999", checkingAccount);
-        assertTrue(depositValidator.validate(GENERAL_HIGHEST_ID, bank));
+        assertTrue(depositValidator.depositValidate(GENERAL_HIGHEST_ID, bank));
     }
 
     @Test
     public void general_negative_id() {
         bank.addAccount(QUICK_ID, checkingAccount);
-        assertFalse(depositValidator.validate(GENERAL_NEGATIVE_ID, bank));
+        assertFalse(depositValidator.depositValidate(GENERAL_NEGATIVE_ID, bank));
     }
 
     @Test
     public void general_missing_input() {
         bank.addAccount(QUICK_ID, checkingAccount);
-        assertFalse(depositValidator.validate(GENERAL_MISSING_INPUT_VALUE, bank));
+        assertFalse(depositValidator.depositValidate(GENERAL_MISSING_INPUT_VALUE, bank));
     }
 
     @Test
     public void general_extra_input() {
         bank.addAccount(QUICK_ID, checkingAccount);
-        assertFalse(depositValidator.validate(GENERAL_EXTRA_INPUT, bank));
+        assertFalse(depositValidator.depositValidate(GENERAL_EXTRA_INPUT, bank));
     }
 
     @Test
     public void deposit_checking_minimum() {
         bank.addAccount(QUICK_ID, checkingAccount);
-        assertTrue(depositValidator.validate(DEPOSIT_CHECKING_MINIMUM, bank));
+        assertTrue(depositValidator.depositValidate(DEPOSIT_CHECKING_MINIMUM, bank));
     }
 
     @Test
     public void deposit_checking_maximum() {
         bank.addAccount(QUICK_ID, checkingAccount);
-        assertTrue(depositValidator.validate(DEPOSIT_CHECKING_MAXIMUM, bank));
+        assertTrue(depositValidator.depositValidate(DEPOSIT_CHECKING_MAXIMUM, bank));
     }
 
     @Test
     public void deposit_checking_negative_value() {
         bank.addAccount(QUICK_ID, checkingAccount);
-        assertFalse(depositValidator.validate(DEPOSIT_CHECKING_NEGATIVE_VALUE, bank));
+        assertFalse(depositValidator.depositValidate(DEPOSIT_CHECKING_NEGATIVE_VALUE, bank));
     }
 
     @Test
     public void deposit_checking_above_maximum_value() {
         bank.addAccount(QUICK_ID, checkingAccount);
-        assertFalse(depositValidator.validate(DEPOSIT_CHECKING_ABOVE_MAXIMUM, bank));
+        assertFalse(depositValidator.depositValidate(DEPOSIT_CHECKING_ABOVE_MAXIMUM, bank));
     }
 
     @Test
     public void deposit_savings_minimum() {
         bank.addAccount(QUICK_ID, savingsAccount);
-        assertTrue(depositValidator.validate(DEPOSIT_SAVINGS_MINIMUM, bank));
+        assertTrue(depositValidator.depositValidate(DEPOSIT_SAVINGS_MINIMUM, bank));
     }
 
     @Test
     public void deposit_savings_maximum() {
         bank.addAccount(QUICK_ID, savingsAccount);
-        assertTrue(depositValidator.validate(DEPOSIT_SAVINGS_MAXIMUM, bank));
+        assertTrue(depositValidator.depositValidate(DEPOSIT_SAVINGS_MAXIMUM, bank));
     }
 
     @Test
     public void deposit_savings_negative_value() {
         bank.addAccount(QUICK_ID, savingsAccount);
-        assertFalse(depositValidator.validate(DEPOSIT_SAVINGS_NEGATIVE_VALUE, bank));
+        assertFalse(depositValidator.depositValidate(DEPOSIT_SAVINGS_NEGATIVE_VALUE, bank));
     }
 
     @Test
     public void deposit_savings_above_maximum_value() {
         bank.addAccount(QUICK_ID, savingsAccount);
-        assertFalse(depositValidator.validate(DEPOSIT_SAVINGS_ABOVE_MAXIMUM, bank));
+        assertFalse(depositValidator.depositValidate(DEPOSIT_SAVINGS_ABOVE_MAXIMUM, bank));
     }
 
     @Test
     public void deposit_cd_anything() {
         bank.addAccount(QUICK_ID, cdAccount);
-        assertFalse(depositValidator.validate(DEPOSIT_CD_ANYTHING, bank));
+        assertFalse(depositValidator.depositValidate(DEPOSIT_CD_ANYTHING, bank));
     }
 
     @Test
     public void deposit_valid_command() {
         bank.addAccount(QUICK_ID, savingsAccount);
-        assertTrue(depositValidator.validate(DEPOSIT_VALID_COMMAND, bank));
+        assertTrue(depositValidator.depositValidate(DEPOSIT_VALID_COMMAND, bank));
     }
 
     @Test
     public void deposit_decimal_value() {
         bank.addAccount(QUICK_ID, checkingAccount);
-        assertTrue(depositValidator.validate(DEPOSIT_DECIMAL_VALUE, bank));
+        assertTrue(depositValidator.depositValidate(DEPOSIT_DECIMAL_VALUE, bank));
     }
 
     @Test
     public void empty_string() {
         bank.addAccount(QUICK_ID, checkingAccount);
-        assertFalse(depositValidator.validate(EMPTY_STRING, bank));
+        assertFalse(depositValidator.depositValidate(EMPTY_STRING, bank));
     }
 
     @Test
     public void just_spaces() {
         bank.addAccount(QUICK_ID, checkingAccount);
-        assertFalse(depositValidator.validate(JUST_SPACES, bank));
+        assertFalse(depositValidator.depositValidate(JUST_SPACES, bank));
     }
 }

@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="banking.DepositValidatorTest" tests="32" skipped="0" failures="0" errors="0" timestamp="2021-05-28T21:21:59" hostname="JIN-COMPOTA" time="0.067">
+<testsuite name="banking.DepositValidatorTest" tests="32" skipped="0" failures="0" errors="0" timestamp="2021-05-31T03:07:03" hostname="JIN-COMPOTA" time="0.053">
   <properties/>
   <testcase name="general_id_has_character()" classname="banking.DepositValidatorTest" time="0.001"/>
   <testcase name="general_account_does_not_exist_in_bank()" classname="banking.DepositValidatorTest" time="0.001"/>
   <testcase name="general_lowest_id()" classname="banking.DepositValidatorTest" time="0.001"/>
-  <testcase name="deposit_checking_negative_value()" classname="banking.DepositValidatorTest" time="0.001"/>
-  <testcase name="general_account_exist_in_bank()" classname="banking.DepositValidatorTest" time="0.001"/>
-  <testcase name="general_extra_space_middle()" classname="banking.DepositValidatorTest" time="0.001"/>
-  <testcase name="general_wrong_command()" classname="banking.DepositValidatorTest" time="0.001"/>
-  <testcase name="general_highest_id()" classname="banking.DepositValidatorTest" time="0.001"/>
+  <testcase name="deposit_checking_negative_value()" classname="banking.DepositValidatorTest" time="0.0"/>
+  <testcase name="general_account_exist_in_bank()" classname="banking.DepositValidatorTest" time="0.0"/>
+  <testcase name="general_extra_space_middle()" classname="banking.DepositValidatorTest" time="0.0"/>
+  <testcase name="general_wrong_command()" classname="banking.DepositValidatorTest" time="0.0"/>
+  <testcase name="general_highest_id()" classname="banking.DepositValidatorTest" time="0.0"/>
   <testcase name="deposit_cd_anything()" classname="banking.DepositValidatorTest" time="0.001"/>
-  <testcase name="deposit_savings_maximum()" classname="banking.DepositValidatorTest" time="0.001"/>
+  <testcase name="deposit_savings_maximum()" classname="banking.DepositValidatorTest" time="0.002"/>
   <testcase name="deposit_savings_minimum()" classname="banking.DepositValidatorTest" time="0.001"/>
   <testcase name="empty_string()" classname="banking.DepositValidatorTest" time="0.001"/>
   <testcase name="deposit_savings_negative_value()" classname="banking.DepositValidatorTest" time="0.001"/>
   <testcase name="general_negative_id()" classname="banking.DepositValidatorTest" time="0.001"/>
   <testcase name="general_9_digit_id()" classname="banking.DepositValidatorTest" time="0.001"/>
-  <testcase name="deposit_savings_above_maximum_value()" classname="banking.DepositValidatorTest" time="0.002"/>
-  <testcase name="deposit_checking_above_maximum_value()" classname="banking.DepositValidatorTest" time="0.0"/>
-  <testcase name="deposit_checking_maximum()" classname="banking.DepositValidatorTest" time="0.002"/>
+  <testcase name="deposit_savings_above_maximum_value()" classname="banking.DepositValidatorTest" time="0.001"/>
+  <testcase name="deposit_checking_above_maximum_value()" classname="banking.DepositValidatorTest" time="0.001"/>
+  <testcase name="deposit_checking_maximum()" classname="banking.DepositValidatorTest" time="0.001"/>
   <testcase name="general_extra_space_end()" classname="banking.DepositValidatorTest" time="0.001"/>
   <testcase name="general_case_sensitivity()" classname="banking.DepositValidatorTest" time="0.001"/>
-  <testcase name="general_missing_input()" classname="banking.DepositValidatorTest" time="0.002"/>
-  <testcase name="deposit_checking_minimum()" classname="banking.DepositValidatorTest" time="0.001"/>
+  <testcase name="general_missing_input()" classname="banking.DepositValidatorTest" time="0.001"/>
+  <testcase name="deposit_checking_minimum()" classname="banking.DepositValidatorTest" time="0.0"/>
   <testcase name="general_7_digit_id()" classname="banking.DepositValidatorTest" time="0.001"/>
-  <testcase name="deposit_decimal_value()" classname="banking.DepositValidatorTest" time="0.002"/>
-  <testcase name="general_id_is_decimal()" classname="banking.DepositValidatorTest" time="0.002"/>
+  <testcase name="deposit_decimal_value()" classname="banking.DepositValidatorTest" time="0.001"/>
+  <testcase name="general_id_is_decimal()" classname="banking.DepositValidatorTest" time="0.001"/>
   <testcase name="general_non_string_command()" classname="banking.DepositValidatorTest" time="0.001"/>
   <testcase name="deposit_valid_command()" classname="banking.DepositValidatorTest" time="0.001"/>
   <testcase name="general_extra_space_front()" classname="banking.DepositValidatorTest" time="0.001"/>
-  <testcase name="just_spaces()" classname="banking.DepositValidatorTest" time="0.001"/>
-  <testcase name="general_account_id_missing()" classname="banking.DepositValidatorTest" time="0.002"/>
+  <testcase name="just_spaces()" classname="banking.DepositValidatorTest" time="0.002"/>
+  <testcase name="general_account_id_missing()" classname="banking.DepositValidatorTest" time="0.001"/>
   <testcase name="general_extra_input()" classname="banking.DepositValidatorTest" time="0.001"/>
   <testcase name="general_missing_command()" classname="banking.DepositValidatorTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
