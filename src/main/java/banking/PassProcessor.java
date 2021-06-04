@@ -31,6 +31,7 @@ public class PassProcessor {
 
     private void removeAllZeroBalanceAccounts() {
         this.list.forEach((key) -> this.bank.getAccounts().remove(key));
+        this.list = new ArrayList<>();
     }
 
     public void minimumBalanceFee(Accounts account) {

@@ -133,4 +133,15 @@ public class PassProcessorTest {
         assertEquals(1, bank.getAccounts().get(QUICK_ID2).getAge());
     }
 
+    @Test
+    public void pass_doesnt_remove_previously_deleted_account_id() {
+        bank.getAccounts().get(QUICK_ID).balance = 0;
+        passProcessor.process(1);
+        checkingAccount = Accounts.checking(2);
+        checkingAccount.deposit(1000);
+        bank.addAccount(QUICK_ID, checkingAccount);
+        passProcessor.process(1);
+        assertEquals(1001.66, bank.getAccounts().get(QUICK_ID).getBalance());
+    }
+
 }
