@@ -18,8 +18,4 @@ public class Bank {
     public void addAccount(String quickId, Accounts givenAccount) {
         accounts.put(quickId, givenAccount);
     }
-
-    public void removeAccount(String quickId) {
-        accounts.remove(quickId);
-    }
 }

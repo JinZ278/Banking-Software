@@ -61,4 +61,9 @@ public class Checking extends Accounts {
         this.balance = rounder(this.balance);
     }
 
+    @Override
+    public int getAge() {
+        return this.age;
+    }
+
 }

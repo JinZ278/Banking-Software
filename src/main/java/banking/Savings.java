@@ -59,4 +59,9 @@ public class Savings extends Accounts {
         this.balance += interest;
         this.balance = rounder(this.balance);
     }
+
+    @Override
+    public int getAge() {
+        return this.age;
+    }
 }

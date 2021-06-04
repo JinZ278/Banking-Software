@@ -2,7 +2,7 @@ package banking;
 
 public class CreateProcessor {
 
-    private final Bank bank;
+    private Bank bank;
 
     public CreateProcessor(Bank bank) {
         this.bank = bank;

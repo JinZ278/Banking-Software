@@ -83,7 +83,7 @@ public class BankTest {
     public void removes_account() {
         bank.addAccount(QUICK_ID, account);
         assertFalse(bank.getAccounts().isEmpty());
-        bank.removeAccount(QUICK_ID);
+        bank.getAccounts().remove(QUICK_ID);
         assertTrue(bank.getAccounts().isEmpty());
     }
 
@@ -91,14 +91,14 @@ public class BankTest {
     public void removes_account_twice() {
         bank.addAccount(QUICK_ID, account);
         bank.addAccount(QUICK_ID_2, account2);
-        bank.removeAccount(QUICK_ID);
-        bank.removeAccount(QUICK_ID_2);
+        bank.getAccounts().remove(QUICK_ID);
+        bank.getAccounts().remove(QUICK_ID_2);
         assertTrue(bank.getAccounts().isEmpty());
     }
 
     @Test
     public void removes_non_existent_account() {
-        bank.removeAccount(QUICK_ID);
+        bank.getAccounts().remove(QUICK_ID);
         assertTrue(bank.getAccounts().isEmpty());
     }
 }
