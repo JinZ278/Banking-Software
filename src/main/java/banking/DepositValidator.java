@@ -19,7 +19,7 @@ public class DepositValidator {
         String newString = stringIsSpaces(commandString);
         stringSplitter(newString);
         idCheck(bank);
-        accountCheck(bank);
+        valueCheck(bank);
         return this.validation;
     }
 
@@ -47,10 +47,12 @@ public class DepositValidator {
         idExists(bank);
     }
 
-    private void accountCheck(Bank bank) {
+    private void valueCheck(Bank bank) {
         Accounts account = bank.getAccounts().get(this.accountId);
-        if (bank.getAccounts().get(this.accountId) != null) {
-            valueCheck(account);
+        if (account != null) {
+            if (!account.validateDepositAmount(Double.parseDouble(this.value))) {
+                this.validation = false;
+            }
         }
     }
 
@@ -91,11 +93,5 @@ public class DepositValidator {
         }
     }
 
-    public void valueCheck(Accounts accounts) {
-        if (!accounts.validateAmount(Double.parseDouble(this.value))) {
-            this.validation = false;
-        }
-        ;
-    }
 
 }

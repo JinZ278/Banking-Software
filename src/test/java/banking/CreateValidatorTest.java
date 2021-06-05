@@ -12,7 +12,7 @@ public class CreateValidatorTest {
     public final String GENERAL_EXTRA_SPACE_FRONT = "  Create Checking 12345678 1.5";
     public final String GENERAL_EXTRA_SPACE_MIDDLE = "Create Checking  12345678 1.5";
     public final String GENERAL_EXTRA_SPACE_END = "Create Checking 12345678 1.5  ";
-    public final String GENERAL_CASE_INSENSITIVITY = "CReATe ChECKing 12345678 2.3";
+    public final String GENERAL_CASE_SENSITIVITY = "CReATe ChECKing 12345678 2.3";
 
     public final String GENERAL_MISSING_COMMAND = "Checking 12345678 1.5";
     public final String GENERAL_WRONG_COMMAND = "Cremate checking 12345678 1.9";
@@ -96,7 +96,7 @@ public class CreateValidatorTest {
 
     @Test
     public void general_insensitive_case() {
-        assertTrue(createValidator.createValidate(GENERAL_CASE_INSENSITIVITY, bank));
+        assertTrue(createValidator.createValidate(GENERAL_CASE_SENSITIVITY, bank));
     }
 
     @Test

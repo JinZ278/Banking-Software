@@ -8,11 +8,13 @@ abstract class Accounts {
     protected int age;
     protected double apr;
     protected double balance;
+    protected boolean withdrawn;
 
     Accounts(double apr, double balance) {
         this.apr = rounder(apr);
         this.balance = rounder(balance);
         this.age = 0;
+        this.withdrawn = false;
     }
 
     static Accounts checking(double apr) {
@@ -40,15 +42,18 @@ abstract class Accounts {
 
     public abstract double getBalance();
 
+    public abstract double getApr();
+
+    public abstract double getAge();
+
     public abstract void withdraw(double amount);
 
     public abstract void deposit(double amount);
 
-    public abstract double getApr();
+    public abstract boolean validateDepositAmount(double amount);
 
-    public abstract boolean validateAmount(double amount);
+    public abstract boolean validateWithdrawAmount(double parseDouble);
 
     public abstract void aprCalculate();
 
-    public abstract int getAge();
 }

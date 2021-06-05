@@ -2,17 +2,9 @@ package banking;
 
 public class Checking extends Accounts {
 
-    public final int MIN_STARTING_AMOUNT = 0;
-    public final double MIN_APR = 0;
-    public final double MAX_APR = 10;
-    public final double MIN_DEPOSIT = 0;
-    public final double MAX_DEPOSIT = 1000;
-
-
     Checking(double apr) {
         super(apr, 0);
     }
-
 
     @Override
     public double getBalance() {
@@ -25,32 +17,44 @@ public class Checking extends Accounts {
     }
 
     @Override
+    public double getAge() {
+        return this.age;
+    }
+
+    ;
+
+    @Override
     public void deposit(double amount) {
         this.balance += rounder(amount);
     }
 
     @Override
     public void withdraw(double amount) {
-        double withdrawal = withdrawOverBalance(amount);
-        this.balance -= rounder(withdrawal);
-    }
-
-    public double withdrawOverBalance(double num) {
-        if (this.balance <= num) {
-            return this.balance;
-        } else {
-            return num;
+        if (this.balance <= amount) {
+            amount = this.balance;
         }
+        this.balance -= rounder(amount);
     }
 
     @Override
-    public boolean validateAmount(double amount) {
-        if (amount >= MIN_DEPOSIT && amount <= MAX_DEPOSIT) {
+    public boolean validateDepositAmount(double amount) {
+        if (amount >= 0 && amount <= 1000) {
             return true;
         } else {
             return false;
         }
     }
+
+    @Override
+    public boolean validateWithdrawAmount(double amount) {
+        if (amount >= 0 && amount <= 400) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    ;
 
     @Override
     public void aprCalculate() {
@@ -59,11 +63,6 @@ public class Checking extends Accounts {
 
         this.balance += interest;
         this.balance = rounder(this.balance);
-    }
-
-    @Override
-    public int getAge() {
-        return this.age;
     }
 
 }

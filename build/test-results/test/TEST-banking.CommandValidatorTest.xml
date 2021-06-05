@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="banking.CommandValidatorTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2021-06-05T20:00:04" hostname="JIN-COMPOTA" time="0.039">
+  <properties/>
+  <testcase name="wrong_deposit_string()" classname="banking.CommandValidatorTest" time="0.003"/>
+  <testcase name="wrong_create_string()" classname="banking.CommandValidatorTest" time="0.006"/>
+  <testcase name="correct_create_string()" classname="banking.CommandValidatorTest" time="0.001"/>
+  <testcase name="correct_deposit_string()" classname="banking.CommandValidatorTest" time="0.001"/>
+  <testcase name="empty_string()" classname="banking.CommandValidatorTest" time="0.001"/>
+  <testcase name="wrong_pass_string()" classname="banking.CommandValidatorTest" time="0.007"/>
+  <testcase name="correct_pass_string()" classname="banking.CommandValidatorTest" time="0.001"/>
+  <testcase name="just_spaces()" classname="banking.CommandValidatorTest" time="0.005"/>
+  <testcase name="random_string()" classname="banking.CommandValidatorTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

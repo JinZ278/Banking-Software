@@ -2,12 +2,6 @@ package banking;
 
 public class Cd extends Accounts {
 
-    public final int MIN_STARTING_AMOUNT = 1000;
-    public final int MAX_STARTING_AMOUNT = 10000;
-    public final double MIN_APR = 0;
-    public final double MAX_APR = 10;
-
-
     Cd(double apr, double balance) {
         super(apr, balance);
     }
@@ -23,27 +17,37 @@ public class Cd extends Accounts {
     }
 
     @Override
+    public double getAge() {
+        return this.age;
+    }
+
+    ;
+
+    @Override
     public void deposit(double amount) {
         this.balance += rounder(amount);
     }
 
     @Override
     public void withdraw(double amount) {
-        double withdrawal = withdrawOverBalance(amount);
-        this.balance -= rounder(withdrawal);
-    }
-
-    public double withdrawOverBalance(double num) {
-        if (this.balance <= num) {
-            return this.balance;
-        } else {
-            return num;
+        if (this.balance <= amount) {
+            amount = this.balance;
         }
+        this.balance -= rounder(amount);
     }
 
     @Override
-    public boolean validateAmount(double amount) {
+    public boolean validateDepositAmount(double amount) {
         return false;
+    }
+
+    @Override
+    public boolean validateWithdrawAmount(double amount) {
+        if (amount >= this.balance && this.age >= 12) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override
@@ -62,8 +66,4 @@ public class Cd extends Accounts {
         this.balance = rounder(this.balance);
     }
 
-    @Override
-    public int getAge() {
-        return this.age;
-    }
 }

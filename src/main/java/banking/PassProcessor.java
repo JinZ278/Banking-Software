@@ -20,6 +20,7 @@ public class PassProcessor {
             removeAllZeroBalanceAccounts();
             accounts.forEach((key, account) -> minimumBalanceFee(account));
             accounts.forEach((key, account) -> account.aprCalculate());
+            accounts.forEach((key, account) -> account.withdrawn = false);
         }
     }
 
