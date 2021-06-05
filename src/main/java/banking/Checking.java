@@ -25,7 +25,7 @@ public class Checking extends Accounts {
 
     @Override
     public void deposit(double amount) {
-        this.balance += rounder(amount);
+        this.balance = rounder(this.balance + amount);
     }
 
     @Override
@@ -33,7 +33,7 @@ public class Checking extends Accounts {
         if (this.balance <= amount) {
             amount = this.balance;
         }
-        this.balance -= rounder(amount);
+        this.balance = rounder(this.balance - amount);
     }
 
     @Override

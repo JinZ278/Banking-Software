@@ -2,7 +2,7 @@ package banking;
 
 public class DepositProcessor {
 
-    private final Bank bank;
+    protected Bank bank;
 
     public DepositProcessor(Bank bank) {
         this.bank = bank;
