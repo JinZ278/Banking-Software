@@ -19,7 +19,7 @@ class CreateValidator {
     }
 
 
-    public boolean passValidate(String commandString, Bank bank) {
+    public boolean createValidate(String commandString, Bank bank) {
         String newString = stringIsSpaces(commandString);
         stringSplitter(newString);
         idCheck(bank);

@@ -12,7 +12,7 @@ public class PassProcessor {
         this.list = new ArrayList<>();
     }
 
-    public void process(int months) {
+    public void processPass(int months) {
         for (int i = 0; i < months; i++) {
             Map<String, Accounts> accounts = this.bank.getAccounts();
             accounts.forEach((key, account) -> account.age += 1);

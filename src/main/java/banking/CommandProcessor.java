@@ -1,15 +1,19 @@
 package banking;
 
+import static java.lang.Integer.parseInt;
+
 public class CommandProcessor {
 
     public Bank bank;
     CreateProcessor createProcessor;
     DepositProcessor depositProcessor;
+    PassProcessor passProcessor;
 
 
     public CommandProcessor(Bank bank) {
         createProcessor = new CreateProcessor(bank);
         depositProcessor = new DepositProcessor(bank);
+        passProcessor = new PassProcessor(bank);
     }
 
     public void process(String valid_create_string) {
@@ -19,6 +23,9 @@ public class CommandProcessor {
         }
         if (info[0].toLowerCase().equals("deposit")) {
             depositProcessor.processDeposit(info);
+        }
+        if (info[0].toLowerCase().equals("pass")) {
+            passProcessor.processPass(parseInt(info[1]));
         }
     }
 

@@ -3,8 +3,10 @@ package banking;
 public class CommandValidator {
     protected Bank bank;
     protected boolean validation;
+
     CreateValidator createValidator;
     DepositValidator depositValidator;
+    PassValidator passValidator;
 
     CommandValidator(Bank bank) {
         this.bank = bank;
@@ -19,12 +21,17 @@ public class CommandValidator {
 
         if (stringInfoInArray[0].toLowerCase().equals("create")) {
             createValidator = new CreateValidator();
-            this.validation = createValidator.passValidate(command_string, this.bank);
+            this.validation = createValidator.createValidate(command_string, this.bank);
         }
 
         if (stringInfoInArray[0].toLowerCase().equals("deposit")) {
             depositValidator = new DepositValidator();
             this.validation = depositValidator.depositValidate(command_string, this.bank);
+        }
+
+        if (stringInfoInArray[0].toLowerCase().equals("pass")) {
+            passValidator = new PassValidator();
+            this.validation = passValidator.passValidate(command_string);
         }
 
         return this.validation;
