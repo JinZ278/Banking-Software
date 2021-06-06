@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="banking.CommandProcessorTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2021-06-06T18:51:57" hostname="JIN-COMPOTA" time="0.086">
+  <properties/>
+  <testcase name="processor_creates_account()" classname="banking.CommandProcessorTest" time="0.049"/>
+  <testcase name="process_create_checking_command()" classname="banking.CommandProcessorTest" time="0.001"/>
+  <testcase name="process_deposit_savings_command()" classname="banking.CommandProcessorTest" time="0.002"/>
+  <testcase name="process_create_cd_command()" classname="banking.CommandProcessorTest" time="0.001"/>
+  <testcase name="process_withdraw_cd()" classname="banking.CommandProcessorTest" time="0.008"/>
+  <testcase name="process_deposit_checking_command()" classname="banking.CommandProcessorTest" time="0.002"/>
+  <testcase name="process_withdraw_checking()" classname="banking.CommandProcessorTest" time="0.002"/>
+  <testcase name="process_pass_twenty_three_months()" classname="banking.CommandProcessorTest" time="0.004"/>
+  <testcase name="process_withdraw_savings()" classname="banking.CommandProcessorTest" time="0.002"/>
+  <testcase name="process_withdraw_checking_twice()" classname="banking.CommandProcessorTest" time="0.001"/>
+  <testcase name="process_deposit_twice()" classname="banking.CommandProcessorTest" time="0.001"/>
+  <testcase name="process_create_savings_command()" classname="banking.CommandProcessorTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

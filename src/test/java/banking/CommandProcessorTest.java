@@ -3,6 +3,7 @@ package banking;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CommandProcessorTest {
@@ -14,6 +15,10 @@ public class CommandProcessorTest {
 
     public final String VALID_DEPOSIT_CHECKING_COMMAND = "Deposit 12345678 1200";
     public final String VALID_DEPOSIT_SAVINGS_COMMAND = "Deposit 29292929 2000";
+
+    public final String VALID_WITHDRAW_CHECKING_COMMAND = "Withdraw 12345678 300";
+    public final String VALID_WITHDRAW_SAVINGS_COMMAND = "Withdraw 12345678 350";
+    public final String VALID_WITHDRAW_CD_COMMAND = "Withdraw 12345678 9999";
 
     public final String VALID_PASS_COMMAND = "Pass 23";
 
@@ -86,6 +91,40 @@ public class CommandProcessorTest {
         commandProcessor.process("Deposit 12345678 69.42");
         assertTrue(bank.getAccounts().get("12345678").getBalance() == 2069.42);
     }
+
+    @Test
+    public void process_withdraw_checking() {
+        commandProcessor.process("Create checking 12345678 2");
+        bank.getAccounts().get("12345678").balance = 3000;
+        commandProcessor.process(VALID_WITHDRAW_CHECKING_COMMAND);
+        assertEquals(2700, bank.getAccounts().get("12345678").getBalance());
+    }
+
+    @Test
+    public void process_withdraw_savings() {
+        commandProcessor.process("Create savings 12345678 2");
+        bank.getAccounts().get("12345678").balance = 3000;
+        commandProcessor.process(VALID_WITHDRAW_SAVINGS_COMMAND);
+        assertEquals(2650, bank.getAccounts().get("12345678").getBalance());
+    }
+
+    @Test
+    public void process_withdraw_cd() {
+        commandProcessor.process("Create cd 12345678 2 2000");
+        commandProcessor.process("Pass 12");
+        commandProcessor.process(VALID_WITHDRAW_CD_COMMAND);
+        assertEquals(0, bank.getAccounts().get("12345678").getBalance());
+    }
+
+    @Test
+    public void process_withdraw_checking_twice() {
+        commandProcessor.process("Create checking 12345678 2");
+        bank.getAccounts().get("12345678").balance = 3000;
+        commandProcessor.process(VALID_WITHDRAW_CHECKING_COMMAND);
+        commandProcessor.process(VALID_WITHDRAW_CHECKING_COMMAND);
+        assertEquals(2400, bank.getAccounts().get("12345678").getBalance());
+    }
+
 
     //
 

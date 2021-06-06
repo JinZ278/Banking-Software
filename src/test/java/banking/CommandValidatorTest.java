@@ -14,6 +14,9 @@ public class CommandValidatorTest {
     public final String DEPOSIT_CHECKING = "Deposit 11122233 250.3";
     public final String WRONG_DEPOSIT_CHECKING = "Deposit 11122233 25022.3";
 
+    public final String WITHDRAW_SAVINGS = "Withdraw 12345677 200";
+    public final String WRONG_WITHDRAW_SAVINGS = "Withdraw 12345677 20022";
+
     public final String PASS_COMMAND = "Pass 12";
     public final String WRONG_PASS_COMMAND = "pass infinity";
 
@@ -52,6 +55,20 @@ public class CommandValidatorTest {
         Accounts savingAccount = Accounts.checking(2);
         bank.addAccount("11122233", savingAccount);
         assertFalse(commandValidator.validate(WRONG_DEPOSIT_CHECKING));
+    }
+
+    @Test
+    public void correct_withdraw_string() {
+        Accounts savingsAccount = Accounts.savings(2);
+        bank.addAccount("12345677", savingsAccount);
+        assertTrue(commandValidator.validate(WITHDRAW_SAVINGS));
+    }
+
+    @Test
+    public void wrong_withdraw_string() {
+        Accounts savingsAccount = Accounts.savings(2);
+        bank.addAccount("12345677", savingsAccount);
+        assertFalse(commandValidator.validate(WRONG_WITHDRAW_SAVINGS));
     }
 
     @Test

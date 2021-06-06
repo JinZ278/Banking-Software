@@ -7,12 +7,13 @@ public class CommandProcessor {
     public Bank bank;
     CreateProcessor createProcessor;
     DepositProcessor depositProcessor;
+    WithdrawProcessor withdrawProcessor;
     PassProcessor passProcessor;
-
 
     public CommandProcessor(Bank bank) {
         createProcessor = new CreateProcessor(bank);
         depositProcessor = new DepositProcessor(bank);
+        withdrawProcessor = new WithdrawProcessor(bank);
         passProcessor = new PassProcessor(bank);
     }
 
@@ -23,6 +24,9 @@ public class CommandProcessor {
         }
         if (info[0].toLowerCase().equals("deposit")) {
             depositProcessor.processDeposit(info);
+        }
+        if (info[0].toLowerCase().equals("withdraw")) {
+            withdrawProcessor.processWithdraw(info);
         }
         if (info[0].toLowerCase().equals("pass")) {
             passProcessor.processPass(parseInt(info[1]));

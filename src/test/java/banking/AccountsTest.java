@@ -171,7 +171,7 @@ public class AccountsTest {
         savings.deposit(944);
         assertEquals(944, savings.getBalance());
         savings.withdraw(111.1111111);
-        assertEquals(832.89, savings.getBalance());
+        assertEquals(832.88, savings.getBalance());
     }
 
     @Test
