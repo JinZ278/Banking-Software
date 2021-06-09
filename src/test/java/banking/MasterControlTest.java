@@ -64,4 +64,5 @@ public class MasterControlTest {
         assertSingleCommand("create checking 12345678 1.2", actual);
 
     }
+    
 }

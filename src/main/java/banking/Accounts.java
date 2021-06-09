@@ -52,7 +52,7 @@ abstract class Accounts {
 
     public abstract boolean validateDepositAmount(double amount);
 
-    public abstract boolean validateWithdrawAmount(double parseDouble);
+    public abstract boolean validateWithdrawAmount(double amount);
 
     public abstract void aprCalculate();
 

@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class DepositValidatorTest {
 
+    public final String GENERAL_CORRECT_STRING = "Deposit 12345678 200";
     public final String GENERAL_EXTRA_SPACE_FRONT = " Deposit 12345678 100";
     public final String GENERAL_EXTRA_SPACE_MIDDLE = "Deposit  12345678 100";
     public final String GENERAL_EXTRA_SPACE_END = "Deposit 12345678 100 ";
@@ -65,6 +66,11 @@ public class DepositValidatorTest {
         savingsAccount = Accounts.savings(2);
         cdAccount = Accounts.cd(3, 1200);
         bank.addAccount(QUICK_ID, checkingAccount);
+    }
+
+    @Test
+    public void general_correct_string() {
+        assertTrue(depositValidator.depositValidate(GENERAL_CORRECT_STRING, bank));
     }
 
     @Test

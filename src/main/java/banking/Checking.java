@@ -54,8 +54,6 @@ public class Checking extends Accounts {
         }
     }
 
-    ;
-
     @Override
     public void aprCalculate() {
         double rate = this.apr / 100 / 12;

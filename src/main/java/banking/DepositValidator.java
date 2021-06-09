@@ -44,6 +44,7 @@ public class DepositValidator {
     private void idCheck(Bank bank) {
         idHasNoCharacters();
         idWithinLimits();
+        idEightCharacters();
         idExists(bank);
     }
 
@@ -79,6 +80,12 @@ public class DepositValidator {
             this.validation = false;
         }
         if (parseInt(this.accountId) < 0) {
+            this.validation = false;
+        }
+    }
+
+    public void idEightCharacters() {
+        if (this.accountId.length() != 8) {
             this.validation = false;
         }
     }
