@@ -8,6 +8,7 @@ public class CommandValidator {
     DepositValidator depositValidator;
     PassValidator passValidator;
     WithdrawValidator withdrawValidator;
+    TransferValidator transferValidator;
 
     CommandValidator(Bank bank) {
         this.bank = bank;
@@ -33,6 +34,11 @@ public class CommandValidator {
         if (stringInfoInArray[0].toLowerCase().equals("withdraw")) {
             withdrawValidator = new WithdrawValidator();
             this.validation = withdrawValidator.withdrawValidate(command_string, this.bank);
+        }
+
+        if (stringInfoInArray[0].toLowerCase().equals("transfer")) {
+            transferValidator = new TransferValidator();
+            this.validation = transferValidator.transferValidate(command_string, this.bank);
         }
 
         if (stringInfoInArray[0].toLowerCase().equals("pass")) {

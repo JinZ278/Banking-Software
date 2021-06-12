@@ -1,5 +1,6 @@
 package banking;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MasterControl {
@@ -7,15 +8,17 @@ public class MasterControl {
     protected CommandValidator commandValidator;
     protected CommandProcessor commandProcessor;
     protected CommandStorage commandStorage;
+    protected Output output;
 
-    public MasterControl(Bank bank, CommandValidator commandValidator, CommandProcessor commandProcessor, CommandStorage commandStorage) {
+    public MasterControl(Bank bank, CommandValidator commandValidator, CommandProcessor commandProcessor, CommandStorage commandStorage, Output output) {
         this.bank = bank;
         this.commandValidator = commandValidator;
         this.commandProcessor = commandProcessor;
         this.commandStorage = commandStorage;
+        this.output = output;
     }
 
-    public List<String> start(List<String> input) {
+    public ArrayList<String> start(List<String> input) {
 
         for (String command : input) {
             if (commandValidator.validate(command)) {
@@ -24,6 +27,6 @@ public class MasterControl {
                 commandStorage.addInvalidString(command);
             }
         }
-        return commandStorage.getInvalidStrings();
+        return commandStorage.getAllStrings(this.output.processOutput());
     }
 }

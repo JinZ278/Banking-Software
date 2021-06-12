@@ -1,5 +1,8 @@
 package banking;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+
 public class Savings extends Accounts {
 
     Savings(double apr) {
@@ -62,6 +65,15 @@ public class Savings extends Accounts {
 
         this.balance += interest;
         this.balance = rounder(this.balance);
+    }
+
+    @Override
+    public String getCurrentState(String id) {
+        DecimalFormat decimalFormat = new DecimalFormat("0.00");
+        decimalFormat.setRoundingMode(RoundingMode.FLOOR);
+
+        String current = "Savings " + id + " " + decimalFormat.format(this.balance) + " " + decimalFormat.format(this.apr);
+        return current;
     }
 
 }
