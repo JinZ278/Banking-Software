@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="banking.AccountsTest" tests="26" skipped="0" failures="0" errors="0" timestamp="2021-06-13T02:54:18" hostname="JIN-COMPOTA" time="0.05">
+  <properties/>
+  <testcase name="checking_withdraw()" classname="banking.AccountsTest" time="0.001"/>
+  <testcase name="decimal_balance()" classname="banking.AccountsTest" time="0.001"/>
+  <testcase name="both_balance_and_apr_are_always_two_decimals()" classname="banking.AccountsTest" time="0.001"/>
+  <testcase name="decimal_apr()" classname="banking.AccountsTest" time="0.001"/>
+  <testcase name="cd_correct_apr()" classname="banking.AccountsTest" time="0.002"/>
+  <testcase name="withdraw_zero()" classname="banking.AccountsTest" time="0.001"/>
+  <testcase name="cd_withdraw()" classname="banking.AccountsTest" time="0.002"/>
+  <testcase name="checking_cant_go_below_zero()" classname="banking.AccountsTest" time="0.001"/>
+  <testcase name="savings_deposit()" classname="banking.AccountsTest" time="0.001"/>
+  <testcase name="cd_cant_go_below_zero()" classname="banking.AccountsTest" time="0.001"/>
+  <testcase name="checking_deposit()" classname="banking.AccountsTest" time="0.001"/>
+  <testcase name="balance_is_always_two_decimals()" classname="banking.AccountsTest" time="0.001"/>
+  <testcase name="savings_cant_go_below_zero()" classname="banking.AccountsTest" time="0.001"/>
+  <testcase name="savings_withdraw()" classname="banking.AccountsTest" time="0.001"/>
+  <testcase name="deposit_zero()" classname="banking.AccountsTest" time="0.002"/>
+  <testcase name="cd_initial_balance()" classname="banking.AccountsTest" time="0.002"/>
+  <testcase name="balance_is_two_decimals_after_deposit()" classname="banking.AccountsTest" time="0.001"/>
+  <testcase name="balance_is_two_decimals_after_withdraw()" classname="banking.AccountsTest" time="0.001"/>
+  <testcase name="apr_is_always_two_decimals()" classname="banking.AccountsTest" time="0.001"/>
+  <testcase name="checking_initial_balance()" classname="banking.AccountsTest" time="0.0"/>
+  <testcase name="checking_correct_apr()" classname="banking.AccountsTest" time="0.001"/>
+  <testcase name="depositing_decimal_amounts()" classname="banking.AccountsTest" time="0.0"/>
+  <testcase name="savings_initial_balance()" classname="banking.AccountsTest" time="0.001"/>
+  <testcase name="savings_correct_apr()" classname="banking.AccountsTest" time="0.001"/>
+  <testcase name="decimal_apr_and_balance()" classname="banking.AccountsTest" time="0.001"/>
+  <testcase name="withdrawing_decimal_amounts()" classname="banking.AccountsTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

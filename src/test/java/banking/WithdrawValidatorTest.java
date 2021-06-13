@@ -54,6 +54,9 @@ public class WithdrawValidatorTest {
     public final String WITHDRAW_CD_MAX_VALUE_AFTER_12_MONTHS = "Withdraw 99999999 1127.27";
     public final String WITHDRAW_CD_ABOVE_MAX_VALUE_AFTER_12_MONTHS = "Withdraw 99999999 9999";
 
+    public final String EMPTY_STRING = "";
+    public final String JUST_SPACES = "    ";
+
     WithdrawValidator withdrawValidator;
     Bank bank;
     PassProcessor passProcessor;
@@ -262,6 +265,16 @@ public class WithdrawValidatorTest {
     public void withdraw_cd_above_max_value_after_12_months() {
         passProcessor.processPass(12);
         assertTrue(withdrawValidator.withdrawValidate(WITHDRAW_CD_ABOVE_MAX_VALUE_AFTER_12_MONTHS, bank));
+    }
+
+    @Test
+    public void empty_string() {
+        assertFalse(withdrawValidator.withdrawValidate(EMPTY_STRING, bank));
+    }
+
+    @Test
+    public void just_spaces() {
+        assertFalse(withdrawValidator.withdrawValidate(JUST_SPACES, bank));
     }
 
 

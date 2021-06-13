@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="banking.MasterControlTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-06-12T23:18:24" hostname="JIN-COMPOTA" time="0.061">
+<testsuite name="banking.MasterControlTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-06-13T02:54:18" hostname="JIN-COMPOTA" time="0.028">
   <properties/>
-  <testcase name="sample_make_sure_this_passes_unchanged_or_you_will_fail()" classname="banking.MasterControlTest" time="0.061"/>
+  <testcase name="invalid_to_create_accounts_with_same_id()" classname="banking.MasterControlTest" time="0.023"/>
+  <testcase name="sample_make_sure_this_passes_unchanged_or_you_will_fail()" classname="banking.MasterControlTest" time="0.001"/>
+  <testcase name="typo_in_create_command_is_invalid()" classname="banking.MasterControlTest" time="0.0"/>
+  <testcase name="typo_in_deposit_command_is_invalid()" classname="banking.MasterControlTest" time="0.0"/>
+  <testcase name="two_typo_commands_both_invalid()" classname="banking.MasterControlTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

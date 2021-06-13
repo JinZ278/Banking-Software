@@ -122,6 +122,13 @@ public class PassProcessorTest {
         assertEquals(47.79, bank.getAccounts().get(QUICK_ID3).getBalance());
     }
 
+    @Test
+    public void pass_doesnt_remove_fees_from_exactly_100_balance_accounts() {
+        bank.getAccounts().get(QUICK_ID).balance = 100;
+        passProcessor.processPass(1);
+        assertEquals(100.08, bank.getAccounts().get(QUICK_ID).getBalance());
+    }
+
     //
 
     @Test

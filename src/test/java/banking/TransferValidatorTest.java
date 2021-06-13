@@ -72,6 +72,9 @@ public class TransferValidatorTest {
     public final String CD_ARBITRARY_DEPOSIT_2 = "Transfer 12345678 23456789 10";
     public final String CD_ARBITRARY_DEPOSIT_3 = "Transfer 12345678 23456789 -10";
 
+    public final String EMPTY_STRING = "";
+    public final String JUST_SPACES = "    ";
+
 
     Bank bank;
     TransferValidator transferValidator;
@@ -158,25 +161,21 @@ public class TransferValidatorTest {
 
     @Test
     public void general_9_digit_first_id() {
-        bank.addAccount("123456789", checkingAccount);
         assertFalse(transferValidator.transferValidate(GENERAL_9_DIGIT_ID, bank));
     }
 
     @Test
     public void general_7_digit_first_id() {
-        bank.addAccount("1234567", checkingAccount);
         assertFalse(transferValidator.transferValidate(GENERAL_7_DIGIT_ID, bank));
     }
 
     @Test
     public void general_first_id_is_character() {
-        bank.addAccount("1234%%%s", checkingAccount);
         assertFalse(transferValidator.transferValidate(GENERAL_ID_HAS_CHARACTERS, bank));
     }
 
     @Test
     public void general_first_id_is_decimal() {
-        bank.addAccount("1234567.8", checkingAccount);
         assertFalse(transferValidator.transferValidate(GENERAL_ID_IS_DECIMAL, bank));
     }
 
@@ -194,31 +193,26 @@ public class TransferValidatorTest {
 
     @Test
     public void general_negative_first_id() {
-        bank.addAccount("-12345678", checkingAccount);
         assertFalse(transferValidator.transferValidate(GENERAL_NEGATIVE_ID, bank));
     }
 
     @Test
     public void general_9_digit_second_id() {
-        bank.addAccount("123456789", checkingAccount);
         assertFalse(transferValidator.transferValidate(GENERAL_9_DIGIT_SECOND_ID, bank));
     }
 
     @Test
     public void general_7_digit_second_id() {
-        bank.addAccount("1234567", checkingAccount);
         assertFalse(transferValidator.transferValidate(GENERAL_7_DIGIT_SECOND_ID, bank));
     }
 
     @Test
     public void general_second_id_is_character() {
-        bank.addAccount("1234%%%s", checkingAccount);
         assertFalse(transferValidator.transferValidate(GENERAL_SECOND_ID_HAS_CHARACTERS, bank));
     }
 
     @Test
     public void general_second_id_is_decimal() {
-        bank.addAccount("1234567.8", checkingAccount);
         assertFalse(transferValidator.transferValidate(GENERAL_SECOND_ID_IS_DECIMAL, bank));
     }
 
@@ -236,7 +230,6 @@ public class TransferValidatorTest {
 
     @Test
     public void general_negative_second_id() {
-        bank.addAccount("-12345678", checkingAccount);
         assertFalse(transferValidator.transferValidate(GENERAL_NEGATIVE_SECOND_ID, bank));
     }
 
@@ -339,6 +332,16 @@ public class TransferValidatorTest {
         assertFalse(transferValidator.transferValidate(CD_ARBITRARY_DEPOSIT_2, bank));
         assertFalse(transferValidator.transferValidate(CD_ARBITRARY_DEPOSIT_3, bank));
 
+    }
+
+    @Test
+    public void empty_string() {
+        assertFalse(transferValidator.transferValidate(EMPTY_STRING, bank));
+    }
+
+    @Test
+    public void just_spaces() {
+        assertFalse(transferValidator.transferValidate(JUST_SPACES, bank));
     }
 
 

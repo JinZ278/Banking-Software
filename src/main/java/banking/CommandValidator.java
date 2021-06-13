@@ -13,37 +13,42 @@ public class CommandValidator {
     CommandValidator(Bank bank) {
         this.bank = bank;
         this.validation = false;
+        createValidator = new CreateValidator();
+        depositValidator = new DepositValidator();
+        withdrawValidator = new WithdrawValidator();
+        transferValidator = new TransferValidator();
+        passValidator = new PassValidator();
     }
 
     public boolean validate(String command_string) {
         String[] stringInfoInArray = command_string.split(" ");
-        if (command_string.isBlank()) {
+
+        if (stringInfoInArray.length == 0) {
             return false;
         }
 
-        if (stringInfoInArray[0].toLowerCase().equals("create")) {
-            createValidator = new CreateValidator();
-            this.validation = createValidator.createValidate(command_string, this.bank);
-        }
+        try {
+            if (stringInfoInArray[0].toLowerCase().equals("create")) {
+                this.validation = createValidator.createValidate(command_string, this.bank);
+            }
 
-        if (stringInfoInArray[0].toLowerCase().equals("deposit")) {
-            depositValidator = new DepositValidator();
-            this.validation = depositValidator.depositValidate(command_string, this.bank);
-        }
+            if (stringInfoInArray[0].toLowerCase().equals("deposit")) {
+                this.validation = depositValidator.depositValidate(command_string, this.bank);
+            }
 
-        if (stringInfoInArray[0].toLowerCase().equals("withdraw")) {
-            withdrawValidator = new WithdrawValidator();
-            this.validation = withdrawValidator.withdrawValidate(command_string, this.bank);
-        }
+            if (stringInfoInArray[0].toLowerCase().equals("withdraw")) {
+                this.validation = withdrawValidator.withdrawValidate(command_string, this.bank);
+            }
 
-        if (stringInfoInArray[0].toLowerCase().equals("transfer")) {
-            transferValidator = new TransferValidator();
-            this.validation = transferValidator.transferValidate(command_string, this.bank);
-        }
+            if (stringInfoInArray[0].toLowerCase().equals("transfer")) {
+                this.validation = transferValidator.transferValidate(command_string, this.bank);
+            }
 
-        if (stringInfoInArray[0].toLowerCase().equals("pass")) {
-            passValidator = new PassValidator();
-            this.validation = passValidator.passValidate(command_string);
+            if (stringInfoInArray[0].toLowerCase().equals("pass")) {
+                this.validation = passValidator.passValidate(command_string);
+            }
+        } catch (Exception e) {
+            this.validation = false;
         }
 
         return this.validation;

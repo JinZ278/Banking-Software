@@ -18,4 +18,12 @@ public class Bank {
     public void addAccount(String quickId, Accounts givenAccount) {
         accounts.put(quickId, givenAccount);
     }
+
+    public boolean idCheck(String id) {
+        if (accounts.get(id) == null) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 }

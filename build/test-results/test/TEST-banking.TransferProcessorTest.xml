@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="banking.TransferProcessorTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-06-13T02:54:18" hostname="JIN-COMPOTA" time="0.003">
+  <properties/>
+  <testcase name="transfer_checking_to_checking()" classname="banking.TransferProcessorTest" time="0.0"/>
+  <testcase name="transfer_savings_to_savings()" classname="banking.TransferProcessorTest" time="0.0"/>
+  <testcase name="transfer_checking_to_savings()" classname="banking.TransferProcessorTest" time="0.0"/>
+  <testcase name="transfer_savings_to_checking()" classname="banking.TransferProcessorTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
