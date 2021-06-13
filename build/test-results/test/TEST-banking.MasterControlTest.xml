@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="banking.MasterControlTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-06-12T23:18:24" hostname="JIN-COMPOTA" time="0.061">
-  <properties/>
-  <testcase name="sample_make_sure_this_passes_unchanged_or_you_will_fail()" classname="banking.MasterControlTest" time="0.061"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
