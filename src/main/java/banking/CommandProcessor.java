@@ -21,7 +21,8 @@ public class CommandProcessor {
     }
 
     public void process(String valid_string) {
-        String[] info = stringSplitter(valid_string);
+        String[] info = valid_string.split(" ");
+
         if (info[0].toLowerCase().equals("create")) {
             createProcessor.processCreate(info);
         }
@@ -41,10 +42,5 @@ public class CommandProcessor {
         if (info[0].toLowerCase().equals("pass")) {
             passProcessor.processPass(parseInt(info[1]));
         }
-    }
-
-    private String[] stringSplitter(String newString) {
-        String[] stringSplitIntoArray = newString.split(" ");
-        return stringSplitIntoArray;
     }
 }

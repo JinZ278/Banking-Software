@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="banking.WithdrawValidatorTest" tests="37" skipped="0" failures="0" errors="0" timestamp="2021-06-13T02:03:24" hostname="JIN-COMPOTA" time="0.033">
+  <properties/>
+  <testcase name="general_id_has_character()" classname="banking.WithdrawValidatorTest" time="0.001"/>
+  <testcase name="withdraw_savings_twice_a_month()" classname="banking.WithdrawValidatorTest" time="0.0"/>
+  <testcase name="withdraw_savings_above_max_value()" classname="banking.WithdrawValidatorTest" time="0.0"/>
+  <testcase name="general_lowest_id()" classname="banking.WithdrawValidatorTest" time="0.0"/>
+  <testcase name="general_account_does_not_exist()" classname="banking.WithdrawValidatorTest" time="0.0"/>
+  <testcase name="general_extra_space_middle()" classname="banking.WithdrawValidatorTest" time="0.001"/>
+  <testcase name="general_wrong_command()" classname="banking.WithdrawValidatorTest" time="0.0"/>
+  <testcase name="general_highest_id()" classname="banking.WithdrawValidatorTest" time="0.0"/>
+  <testcase name="empty_string()" classname="banking.WithdrawValidatorTest" time="0.0"/>
+  <testcase name="withdraw_savings_negative_value()" classname="banking.WithdrawValidatorTest" time="0.001"/>
+  <testcase name="withdraw_checking_negative_value()" classname="banking.WithdrawValidatorTest" time="0.001"/>
+  <testcase name="withdraw_savings_maximum()" classname="banking.WithdrawValidatorTest" time="0.001"/>
+  <testcase name="general_negative_id()" classname="banking.WithdrawValidatorTest" time="0.0"/>
+  <testcase name="withdraw_savings_minimum()" classname="banking.WithdrawValidatorTest" time="0.0"/>
+  <testcase name="withdraw_checking_maximum()" classname="banking.WithdrawValidatorTest" time="0.0"/>
+  <testcase name="withdraw_savings_pass_resets_monthly()" classname="banking.WithdrawValidatorTest" time="0.001"/>
+  <testcase name="general_9_digit_id()" classname="banking.WithdrawValidatorTest" time="0.0"/>
+  <testcase name="withdraw_cd_max_value()" classname="banking.WithdrawValidatorTest" time="0.0"/>
+  <testcase name="withdraw_cd_max_value_after_12_months()" classname="banking.WithdrawValidatorTest" time="0.001"/>
+  <testcase name="withdraw_checking_minimum()" classname="banking.WithdrawValidatorTest" time="0.0"/>
+  <testcase name="general_extra_space_end()" classname="banking.WithdrawValidatorTest" time="0.0"/>
+  <testcase name="general_case_sensitivity()" classname="banking.WithdrawValidatorTest" time="0.0"/>
+  <testcase name="general_missing_value()" classname="banking.WithdrawValidatorTest" time="0.0"/>
+  <testcase name="general_7_digit_id()" classname="banking.WithdrawValidatorTest" time="0.001"/>
+  <testcase name="withdraw_cd_doesnt_work()" classname="banking.WithdrawValidatorTest" time="0.0"/>
+  <testcase name="withdraw_checking_above_max_value()" classname="banking.WithdrawValidatorTest" time="0.0"/>
+  <testcase name="withdraw_cd_above_max_value_after_12_months()" classname="banking.WithdrawValidatorTest" time="0.0"/>
+  <testcase name="general_id_is_decimal()" classname="banking.WithdrawValidatorTest" time="0.001"/>
+  <testcase name="general_non_string_command()" classname="banking.WithdrawValidatorTest" time="0.001"/>
+  <testcase name="withdraw_cd_below_max_value_after_12_months()" classname="banking.WithdrawValidatorTest" time="0.001"/>
+  <testcase name="general_extra_space_front()" classname="banking.WithdrawValidatorTest" time="0.0"/>
+  <testcase name="withdraw_cd_above_max_value()" classname="banking.WithdrawValidatorTest" time="0.001"/>
+  <testcase name="just_spaces()" classname="banking.WithdrawValidatorTest" time="0.0"/>
+  <testcase name="general_account_id_missing()" classname="banking.WithdrawValidatorTest" time="0.0"/>
+  <testcase name="general_extra_value()" classname="banking.WithdrawValidatorTest" time="0.0"/>
+  <testcase name="general_account_exists()" classname="banking.WithdrawValidatorTest" time="0.0"/>
+  <testcase name="general_missing_command()" classname="banking.WithdrawValidatorTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

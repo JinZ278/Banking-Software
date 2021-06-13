@@ -20,45 +20,35 @@ class CreateValidator {
 
 
     public boolean createValidate(String commandString, Bank bank) {
-        String newString = stringIsSpaces(commandString);
-        stringSplitter(newString);
-        idCheck(bank);
-        aprCheck();
-        valueCheck();
-        return this.validation;
-    }
-
-    private String stringIsSpaces(String commandString) {
-        if (commandString.isBlank()) {
+        String[] newString = commandString.split(" ");
+        if (newString.length == 0) {
             this.validation = false;
-            return "";
-        } else {
-            return commandString;
+            return this.validation;
         }
-    }
 
-
-    private void stringSplitter(String newString) {
-        String[] newStringSplitIntoArray = newString.split(" ");
-        String firstWord = newStringSplitIntoArray[0].toLowerCase();
-
-        if (firstWord.equals("create")) {
-            stringAssignerCreate(newStringSplitIntoArray);
+        if (newString[0].toLowerCase().equals("create")) {
+            stringAssignerCreate(newString);
+            idCheck(bank);
+            aprCheck();
+            valueCheck();
+            return this.validation;
+        } else {
+            this.validation = false;
+            return this.validation;
         }
     }
 
     private void idCheck(Bank bank) {
-        idHasNoCharacters();
-        idExistsInBank(bank);
+        int id = idHasNoCharacters();
+        idAlreadyExistsInBank(bank);
         idEightCharacters();
-        idValueCheck();
+        idValueCheck(id);
     }
 
     private void aprCheck() {
-        aprStringCheck();
-        aprValueCheck();
+        double apr = aprStringCheck();
+        aprValueCheck(apr);
     }
-
 
     private void valueCheck() {
         if (this.accountType.equals("cd") && Double.parseDouble(this.value) < 1000) {
@@ -72,11 +62,7 @@ class CreateValidator {
     public void stringAssignerCreate(String[] array) {
         String secondWord = array[1].toLowerCase();
         this.accountType = array[1].toLowerCase();
-        if (secondWord.equals("checking") && array.length == 4) {
-            this.accountId = array[2];
-            this.accountApr = array[3];
-        }
-        if (secondWord.equals("savings") && array.length == 4) {
+        if ((secondWord.equals("checking") || secondWord.equals("savings")) && array.length == 4) {
             this.accountId = array[2];
             this.accountApr = array[3];
         }
@@ -87,16 +73,17 @@ class CreateValidator {
         }
     }
 
-    public void idHasNoCharacters() {
+    public int idHasNoCharacters() {
         try {
-            parseInt(this.accountId);
+            return parseInt(this.accountId);
         } catch (NumberFormatException e) {
             this.accountId = "0";
             this.validation = false;
+            return 0;
         }
     }
 
-    public void idExistsInBank(Bank bank) {
+    public void idAlreadyExistsInBank(Bank bank) {
         if (bank.getAccounts().get(this.accountId) != null) {
             this.validation = false;
         }
@@ -108,29 +95,30 @@ class CreateValidator {
         }
     }
 
-    public void idValueCheck() {
-        if (parseInt(this.accountId) > 99999999) {
+    public void idValueCheck(int id) {
+        if (id > 99999999) {
             this.validation = false;
         }
-        if (parseInt(this.accountId) < 0) {
+        if (id < 0) {
             this.validation = false;
         }
     }
 
-    public void aprStringCheck() {
+    public double aprStringCheck() {
         try {
-            Double.parseDouble(this.accountApr);
+            return Double.parseDouble(this.accountApr);
         } catch (NumberFormatException e) {
             this.accountApr = "0";
             this.validation = false;
+            return 0;
         }
     }
 
-    public void aprValueCheck() {
-        if (Double.parseDouble(this.accountApr) > 10) {
+    public void aprValueCheck(double apr) {
+        if (apr > 10) {
             this.validation = false;
         }
-        if (Double.parseDouble(this.accountApr) < 0) {
+        if (apr < 0) {
             this.validation = false;
         }
     }

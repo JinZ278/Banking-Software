@@ -13,9 +13,10 @@ public class PassProcessor {
     }
 
     public void processPass(int months) {
+        Map<String, Accounts> accounts = this.bank.getAccounts();
+        accounts.forEach((key, account) -> account.age += months);
+
         for (int i = 0; i < months; i++) {
-            Map<String, Accounts> accounts = this.bank.getAccounts();
-            accounts.forEach((key, account) -> account.age += 1);
             accounts.forEach((key, account) -> zeroBalanceCheck(key, account));
             removeAllZeroBalanceAccounts();
             accounts.forEach((key, account) -> minimumBalanceFee(account));

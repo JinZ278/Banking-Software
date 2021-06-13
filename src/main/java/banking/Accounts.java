@@ -43,16 +43,28 @@ abstract class Accounts {
         return Double.parseDouble(value);
     }
 
+    public double getBalance() {
+        return this.balance;
+    }
 
-    public abstract double getBalance();
+    public double getApr() {
+        return this.apr;
+    }
 
-    public abstract double getApr();
+    public double getAge() {
+        return this.age;
+    }
 
-    public abstract double getAge();
+    public void withdraw(double amount) {
+        if (this.balance <= amount) {
+            amount = this.balance;
+        }
+        this.balance = rounder(this.balance - amount);
+    }
 
-    public abstract void withdraw(double amount);
-
-    public abstract void deposit(double amount);
+    public void deposit(double amount) {
+        this.balance = rounder(this.balance + amount);
+    }
 
     public abstract boolean validateDepositAmount(double amount);
 

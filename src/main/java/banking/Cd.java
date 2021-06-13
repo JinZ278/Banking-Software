@@ -10,36 +10,6 @@ public class Cd extends Accounts {
     }
 
     @Override
-    public double getBalance() {
-        return this.balance;
-    }
-
-    @Override
-    public double getApr() {
-        return this.apr;
-    }
-
-    @Override
-    public double getAge() {
-        return this.age;
-    }
-
-    ;
-
-    @Override
-    public void deposit(double amount) {
-        this.balance = rounder(this.balance + amount);
-    }
-
-    @Override
-    public void withdraw(double amount) {
-        if (this.balance <= amount) {
-            amount = this.balance;
-        }
-        this.balance = rounder(this.balance - amount);
-    }
-
-    @Override
     public boolean validateDepositAmount(double amount) {
         return false;
     }

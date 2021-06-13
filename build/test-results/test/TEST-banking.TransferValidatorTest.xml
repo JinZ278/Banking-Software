@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="banking.TransferValidatorTest" tests="45" skipped="0" failures="0" errors="0" timestamp="2021-06-13T02:03:24" hostname="JIN-COMPOTA" time="0.034">
+  <properties/>
+  <testcase name="checking_deposit_zero_value()" classname="banking.TransferValidatorTest" time="0.0"/>
+  <testcase name="general_extra_space_middle()" classname="banking.TransferValidatorTest" time="0.0"/>
+  <testcase name="general_correct_transfer_command()" classname="banking.TransferValidatorTest" time="0.0"/>
+  <testcase name="savings_deposit_negative_value()" classname="banking.TransferValidatorTest" time="0.0"/>
+  <testcase name="general_wrong_command()" classname="banking.TransferValidatorTest" time="0.0"/>
+  <testcase name="general_lowest_first_id()" classname="banking.TransferValidatorTest" time="0.001"/>
+  <testcase name="general_9_digit_first_id()" classname="banking.TransferValidatorTest" time="0.0"/>
+  <testcase name="checking_withdraw_negative_value()" classname="banking.TransferValidatorTest" time="0.0"/>
+  <testcase name="checking_deposit_negative_value()" classname="banking.TransferValidatorTest" time="0.0"/>
+  <testcase name="general_missing_one_id()" classname="banking.TransferValidatorTest" time="0.0"/>
+  <testcase name="savings_deposit_zero_value()" classname="banking.TransferValidatorTest" time="0.001"/>
+  <testcase name="general_missing_two_id()" classname="banking.TransferValidatorTest" time="0.0"/>
+  <testcase name="checking_withdraw_higher_than_max_value()" classname="banking.TransferValidatorTest" time="0.001"/>
+  <testcase name="general_second_id_is_character()" classname="banking.TransferValidatorTest" time="0.0"/>
+  <testcase name="general_both_accounts_dont_exist()" classname="banking.TransferValidatorTest" time="0.0"/>
+  <testcase name="checking_withdraw_zero_value()" classname="banking.TransferValidatorTest" time="0.0"/>
+  <testcase name="cd_deposit_is_always_false()" classname="banking.TransferValidatorTest" time="0.001"/>
+  <testcase name="general_lowest_second_id()" classname="banking.TransferValidatorTest" time="0.0"/>
+  <testcase name="general_one_account_doesnt_exist()" classname="banking.TransferValidatorTest" time="0.0"/>
+  <testcase name="checking_deposit_higher_than_max_value()" classname="banking.TransferValidatorTest" time="0.001"/>
+  <testcase name="general_7_digit_first_id()" classname="banking.TransferValidatorTest" time="0.0"/>
+  <testcase name="savings_withdraw_higher_than_max_value()" classname="banking.TransferValidatorTest" time="0.0"/>
+  <testcase name="general_both_accounts_exist()" classname="banking.TransferValidatorTest" time="0.0"/>
+  <testcase name="general_second_id_is_decimal()" classname="banking.TransferValidatorTest" time="0.0"/>
+  <testcase name="general_9_digit_second_id()" classname="banking.TransferValidatorTest" time="0.001"/>
+  <testcase name="savings_withdraw_highest_value()" classname="banking.TransferValidatorTest" time="0.001"/>
+  <testcase name="general_highest_first_id()" classname="banking.TransferValidatorTest" time="0.001"/>
+  <testcase name="cd_withdraw_is_always_false()" classname="banking.TransferValidatorTest" time="0.0"/>
+  <testcase name="general_negative_first_id()" classname="banking.TransferValidatorTest" time="0.0"/>
+  <testcase name="general_negative_second_id()" classname="banking.TransferValidatorTest" time="0.0"/>
+  <testcase name="checking_withdraw_highest_value()" classname="banking.TransferValidatorTest" time="0.001"/>
+  <testcase name="general_extra_space_end()" classname="banking.TransferValidatorTest" time="0.0"/>
+  <testcase name="general_case_sensitivity()" classname="banking.TransferValidatorTest" time="0.0"/>
+  <testcase name="savings_deposit_higher_than_max_value()" classname="banking.TransferValidatorTest" time="0.001"/>
+  <testcase name="checking_deposit_max_value()" classname="banking.TransferValidatorTest" time="0.001"/>
+  <testcase name="savings_deposit_max_value()" classname="banking.TransferValidatorTest" time="0.001"/>
+  <testcase name="general_non_string_command()" classname="banking.TransferValidatorTest" time="0.001"/>
+  <testcase name="general_highest_second_id()" classname="banking.TransferValidatorTest" time="0.001"/>
+  <testcase name="general_extra_space_front()" classname="banking.TransferValidatorTest" time="0.0"/>
+  <testcase name="general_first_id_is_character()" classname="banking.TransferValidatorTest" time="0.0"/>
+  <testcase name="savings_withdraw_negative_value()" classname="banking.TransferValidatorTest" time="0.001"/>
+  <testcase name="savings_withdraw_zero_value()" classname="banking.TransferValidatorTest" time="0.001"/>
+  <testcase name="general_first_id_is_decimal()" classname="banking.TransferValidatorTest" time="0.001"/>
+  <testcase name="general_7_digit_second_id()" classname="banking.TransferValidatorTest" time="0.0"/>
+  <testcase name="general_missing_command()" classname="banking.TransferValidatorTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

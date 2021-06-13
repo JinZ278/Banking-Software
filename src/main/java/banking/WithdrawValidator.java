@@ -1,7 +1,5 @@
 package banking;
 
-import static java.lang.Integer.parseInt;
-
 public class WithdrawValidator {
 
     protected String accountId;
@@ -15,38 +13,28 @@ public class WithdrawValidator {
     }
 
     public boolean withdrawValidate(String commandString, Bank bank) {
-        String newString = stringIsSpaces(commandString);
-        stringSplitter(newString);
-        idCheck(bank);
-        valueCheck(bank);
-        return this.validation;
-    }
-
-    private String stringIsSpaces(String string) {
-        if (string.isBlank()) {
+        String[] newString = commandString.split(" ");
+        if (newString.length == 0) {
             this.validation = false;
-            return "";
-        } else {
-            return string;
+            return this.validation;
         }
-    }
 
-    private void stringSplitter(String newString) {
-        String[] newStringSplitInArray = newString.split(" ");
-        String firstWord = newStringSplitInArray[0].toLowerCase();
-
-        if (firstWord.equals("withdraw")) {
-            stringAssignerWithdraw(newStringSplitInArray);
+        if (newString[0].toLowerCase().equals("withdraw")) {
+            stringAssignerWithdraw(newString);
+            idCheck(bank);
+            withdrawValueCheck(bank);
+            return this.validation;
+        } else {
+            this.validation = false;
+            return this.validation;
         }
     }
 
     private void idCheck(Bank bank) {
-        idHasNoCharacters();
-        idWithinLimits();
-        idExists(bank);
+        this.validation = bank.idCheck(this.accountId);
     }
 
-    private void valueCheck(Bank bank) {
+    private void withdrawValueCheck(Bank bank) {
         Accounts account = bank.getAccounts().get(this.accountId);
         if (account != null) {
             if (!account.validateWithdrawAmount(Double.parseDouble(this.value))) {
@@ -60,34 +48,6 @@ public class WithdrawValidator {
             this.accountId = arrOfStr[1];
             this.value = arrOfStr[2];
         } else {
-            this.validation = false;
-        }
-    }
-
-    public void idHasNoCharacters() {
-        try {
-            parseInt(this.accountId);
-        } catch (NumberFormatException e) {
-            this.accountId = "0";
-            this.validation = false;
-        }
-    }
-
-    public void idWithinLimits() {
-        if (parseInt(this.accountId) > 99999999) {
-            this.validation = false;
-        }
-        if (parseInt(this.accountId) < 0) {
-            this.validation = false;
-        }
-    }
-
-    public void idExists(Bank bank) {
-        try {
-            if (bank.getAccounts().get(this.accountId) == null) {
-                this.validation = false;
-            }
-        } catch (Exception e) {
             this.validation = false;
         }
     }
