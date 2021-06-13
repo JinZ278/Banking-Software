@@ -22,8 +22,7 @@ class CreateValidator {
     public boolean createValidate(String commandString, Bank bank) {
         String[] newString = commandString.split(" ");
         if (newString.length == 0) {
-            this.validation = false;
-            return this.validation;
+            return false;
         }
 
         if (newString[0].toLowerCase().equals("create")) {
@@ -33,16 +32,15 @@ class CreateValidator {
             valueCheck();
             return this.validation;
         } else {
-            this.validation = false;
-            return this.validation;
+            return false;
         }
     }
 
     private void idCheck(Bank bank) {
         int id = idHasNoCharacters();
         idAlreadyExistsInBank(bank);
-        idEightCharacters();
         idValueCheck(id);
+        idEightCharacters();
     }
 
     private void aprCheck() {
@@ -89,17 +87,17 @@ class CreateValidator {
         }
     }
 
-    public void idEightCharacters() {
-        if (this.accountId.length() != 8) {
-            this.validation = false;
-        }
-    }
-
     public void idValueCheck(int id) {
         if (id > 99999999) {
             this.validation = false;
         }
         if (id < 0) {
+            this.validation = false;
+        }
+    }
+
+    public void idEightCharacters() {
+        if (this.accountId.length() != 8) {
             this.validation = false;
         }
     }

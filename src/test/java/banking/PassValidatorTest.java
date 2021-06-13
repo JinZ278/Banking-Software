@@ -29,6 +29,9 @@ public class PassValidatorTest {
     public final String MONTH_IS_HIGHEST_BOUND = "Pass 60";
     public final String MONTH_IS_HIGHER_THAN_BOUND = "Pass 61";
 
+    public final String EMPTY_STRING = "";
+    public final String JUST_SPACES = " ";
+
 
     Bank bank;
     PassValidator passValidator;
@@ -129,5 +132,17 @@ public class PassValidatorTest {
     @Test
     public void months_is_above_higher_bound() {
         assertFalse(passValidator.passValidate(MONTH_IS_HIGHER_THAN_BOUND));
+    }
+
+    //
+
+    @Test
+    public void empty_string() {
+        assertFalse(passValidator.passValidate(EMPTY_STRING));
+    }
+
+    @Test
+    public void just_space() {
+        assertFalse(passValidator.passValidate(JUST_SPACES));
     }
 }

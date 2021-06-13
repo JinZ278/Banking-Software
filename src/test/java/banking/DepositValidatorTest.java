@@ -39,7 +39,7 @@ public class DepositValidatorTest {
     public final String DEPOSIT_CHECKING_ABOVE_MAXIMUM = "Deposit 12345678 1200";
 
     public final String DEPOSIT_SAVINGS_MINIMUM = "Deposit 12345678 0";
-    public final String DEPOSIT_SAVINGS_MAXIMUM = "Deposit 12345678 1000";
+    public final String DEPOSIT_SAVINGS_MAXIMUM = "Deposit 12345678 2500";
     public final String DEPOSIT_SAVINGS_NEGATIVE_VALUE = "Deposit 12345678 -500";
     public final String DEPOSIT_SAVINGS_ABOVE_MAXIMUM = "Deposit 12345678 3000";
 

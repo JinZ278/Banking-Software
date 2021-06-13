@@ -28,8 +28,10 @@ public class Output {
         list.add(accounts.getCurrentState(key));
         if (accounts.history != null) {
             accounts.history.forEach((string) -> list.add(string));
+            return list;
+        } else {
+            return null;
         }
-        return list;
     }
 
 

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="banking.BankTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2021-06-13T02:03:24" hostname="JIN-COMPOTA" time="0.012">
+<testsuite name="banking.BankTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2021-06-13T02:54:18" hostname="JIN-COMPOTA" time="0.017">
   <properties/>
   <testcase name="deposit_money_to_bank_account()" classname="banking.BankTest" time="0.001"/>
-  <testcase name="removes_account()" classname="banking.BankTest" time="0.001"/>
-  <testcase name="withdraw_money_from_bank_account()" classname="banking.BankTest" time="0.0"/>
-  <testcase name="deposit_money_to_bank_account_twice()" classname="banking.BankTest" time="0.0"/>
-  <testcase name="removes_account_twice()" classname="banking.BankTest" time="0.001"/>
-  <testcase name="bank_accounts_apr()" classname="banking.BankTest" time="0.0"/>
-  <testcase name="removes_non_existent_account()" classname="banking.BankTest" time="0.0"/>
-  <testcase name="bank_is_initially_empty()" classname="banking.BankTest" time="0.001"/>
-  <testcase name="add_account_to_bank()" classname="banking.BankTest" time="0.0"/>
-  <testcase name="add_two_accounts_to_bank()" classname="banking.BankTest" time="0.0"/>
+  <testcase name="removes_account()" classname="banking.BankTest" time="0.002"/>
+  <testcase name="withdraw_money_from_bank_account()" classname="banking.BankTest" time="0.001"/>
+  <testcase name="deposit_money_to_bank_account_twice()" classname="banking.BankTest" time="0.001"/>
+  <testcase name="removes_account_twice()" classname="banking.BankTest" time="0.0"/>
+  <testcase name="bank_accounts_apr()" classname="banking.BankTest" time="0.001"/>
+  <testcase name="removes_non_existent_account()" classname="banking.BankTest" time="0.001"/>
+  <testcase name="bank_is_initially_empty()" classname="banking.BankTest" time="0.0"/>
+  <testcase name="add_account_to_bank()" classname="banking.BankTest" time="0.001"/>
+  <testcase name="add_two_accounts_to_bank()" classname="banking.BankTest" time="0.001"/>
   <testcase name="withdraw_money_from_bank_account_twice()" classname="banking.BankTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

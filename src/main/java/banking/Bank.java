@@ -20,14 +20,10 @@ public class Bank {
     }
 
     public boolean idCheck(String id) {
-        try {
-            if (accounts.get(id) == null) {
-                return false;
-            } else {
-                return true;
-            }
-        } catch (Exception e) {
+        if (accounts.get(id) == null) {
             return false;
+        } else {
+            return true;
         }
     }
 }

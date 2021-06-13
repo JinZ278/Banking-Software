@@ -24,7 +24,7 @@ public class CommandValidator {
         String[] stringInfoInArray = command_string.split(" ");
 
         if (stringInfoInArray.length == 0) {
-            return this.validation;
+            return false;
         }
 
         try {

@@ -15,8 +15,7 @@ public class WithdrawValidator {
     public boolean withdrawValidate(String commandString, Bank bank) {
         String[] newString = commandString.split(" ");
         if (newString.length == 0) {
-            this.validation = false;
-            return this.validation;
+            return false;
         }
 
         if (newString[0].toLowerCase().equals("withdraw")) {
@@ -25,8 +24,7 @@ public class WithdrawValidator {
             withdrawValueCheck(bank);
             return this.validation;
         } else {
-            this.validation = false;
-            return this.validation;
+            return false;
         }
     }
 
