@@ -12,35 +12,23 @@ public class PassValidator {
     }
 
     public boolean passValidate(String pass_command) {
-        String newString = stringIsSpaces(pass_command);
-        stringSplitter(newString);
-        valueCheck();
+        String[] newString = pass_command.split(" ");
+        if (newString.length == 0) {
+            return false;
+        }
+
+        if (newString[0].toLowerCase().equals("pass")) {
+            stringAssignerPass(newString);
+            valueCheck();
+        } else {
+            this.validation = false;
+        }
         return this.validation;
     }
 
-    private String stringIsSpaces(String commandString) {
-        if (commandString.isBlank()) {
-            this.validation = false;
-            return "";
-        } else {
-            return commandString;
-        }
-    }
-
-    private void stringSplitter(String newString) {
-        String[] newStringSplitIntoArray = newString.split(" ");
-        String firstWord = newStringSplitIntoArray[0].toLowerCase();
-
-        if (firstWord.equals("pass")) {
-            stringAssignerPass(newStringSplitIntoArray);
-        } else {
-            this.validation = false;
-        }
-    }
-
     private void valueCheck() {
-        valueIsNotString();
-        valueWithinBounds();
+        int months = valueIsNotString();
+        valueWithinBounds(months);
     }
 
     private void stringAssignerPass(String[] newStringSplitIntoArray) {
@@ -51,17 +39,17 @@ public class PassValidator {
         }
     }
 
-    private void valueIsNotString() {
+    private int valueIsNotString() {
         try {
-            parseInt(this.months);
+            return parseInt(this.months);
         } catch (NumberFormatException e) {
             this.months = "0";
             this.validation = false;
+            return 0;
         }
     }
 
-    private void valueWithinBounds() {
-        int month = parseInt(this.months);
+    private void valueWithinBounds(int month) {
         if (month < 1) {
             this.validation = false;
         }

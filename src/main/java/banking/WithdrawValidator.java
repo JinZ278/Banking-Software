@@ -36,10 +36,8 @@ public class WithdrawValidator {
 
     private void withdrawValueCheck(Bank bank) {
         Accounts account = bank.getAccounts().get(this.accountId);
-        if (account != null) {
-            if (!account.validateWithdrawAmount(Double.parseDouble(this.value))) {
-                this.validation = false;
-            }
+        if ((account != null) && (!account.validateWithdrawAmount(Double.parseDouble(this.value)))) {
+            this.validation = false;
         }
     }
 
